@@ -32,7 +32,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-    font-family: var(--font-primaria);
+    font-family: var(--font-primary);
     
 }
 ol, ul {
@@ -61,7 +61,7 @@ img{
 
 :root{
 
---font-primaria:'Inter', sans-serif;
+--font-primary:'Inter', sans-serif;
 
 }
 `;
