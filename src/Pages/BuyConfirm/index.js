@@ -1,3 +1,3 @@
 export const BuyConfirm = () => {
-  return <div>BuyConfirm</div>;
+  return <div>confirmaçao de compra</div>;
 };
