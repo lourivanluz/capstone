@@ -50,7 +50,7 @@ export const UserProvider = ({ children }) => {
     };
 
     api
-      .post("/register", payload)
+      .post("/login", payload)
       .then((response) => {
         const { accessToken, user } = response.data;
 
