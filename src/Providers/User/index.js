@@ -3,9 +3,9 @@ import { api } from "./../../Services/";
 
 const UserContext = createContext();
 
-const useUser = () => useContext(UserContext);
+export const useUser = () => useContext(UserContext);
 
-const UserProvider = ({ children }) => {
+export const UserProvider = ({ children }) => {
   const [data, setData] = useState(() => {
     const accessToken = localStorage.getItem("@BHealthy: accessToken");
     const user = localStorage.getItem("@BHealthy: user");
@@ -87,5 +87,3 @@ const UserProvider = ({ children }) => {
     </UserContext.Provider>
   );
 };
-
-export { UserProvider, useUser };

@@ -1,5 +1,10 @@
 import { CartProvider } from "./Cart";
+import { UserProvider } from "./User";
 
 export const Providers = ({ children }) => {
-  return <CartProvider>{children}</CartProvider>;
+  return (
+    <CartProvider>
+      <UserProvider>{children}</UserProvider>
+    </CartProvider>
+  );
 };
