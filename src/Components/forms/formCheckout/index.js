@@ -40,7 +40,7 @@ export const FormCheckout = () => {
       <input placeholder="Cep" type="number" {...register("cep")} />
       {errors && <p>{errors.cep?.message}</p>}
 
-      <input placeholder="Endereço" type="text" {...register("adress")} />
+      <input placeholder="Endereço" type="text" {...register("address")} />
       {errors && <p>{errors.adress?.message}</p>}
 
       <input placeholder="Bairro" type="text" {...register("area")} />
@@ -54,7 +54,7 @@ export const FormCheckout = () => {
         {...register("complement")}
       />
       {errors && <p>{errors.complement?.message}</p>}
-      <button type="submit">cadastro</button>
+      <input type="submit" />
     </form>
   );
 };
