@@ -1,3 +1,5 @@
+import SignUpForm from "../../Components/SignUpForm";
+
 export const Register = () => {
-  return <div>Register</div>;
+  return <SignUpForm />;
 };
