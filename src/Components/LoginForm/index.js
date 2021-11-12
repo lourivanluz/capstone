@@ -21,7 +21,7 @@ const LoginForm = () => {
     <form onSubmit={handleSubmit(handleLogin)}>
       <input placeholder="Email" {...register("email")} />
       <input placeholder="Senha" {...register("password")} />
-      <button>Entrar</button>
+      <button type="submit">Entrar</button>
     </form>
   );
 };
