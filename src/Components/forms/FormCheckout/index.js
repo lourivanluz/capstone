@@ -22,8 +22,8 @@ export const FormCheckout = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const handleData = (_) => {
-    console.log("mudei o showCart pra true e enviar pro local storege @h user");
+  const handleData = (data) => {
+    localStorage.setItem(JSON.stringify(data), "@BHealthy: user");
   };
 
   return (
