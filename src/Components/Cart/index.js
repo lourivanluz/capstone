@@ -2,6 +2,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { RiShoppingBag2Fill } from "react-icons/ri";
 import { CartContainer } from "./style";
 import { useCart } from "../../Providers/Cart";
+import { CardCart } from "../CardCart";
 
 export const Cart = ({ show }) => {
   const { handleShowCart } = useCart();
@@ -105,6 +106,15 @@ export const Cart = ({ show }) => {
     return array.map((item) => item.id).indexOf(item.id) === index;
   });
 
+  const totalPrice = cartList
+    .reduce(
+      (acc, item) =>
+        Number(item.price.replace("R$ ", "").replace(",", ".")) + acc,
+      0
+    )
+    .toFixed(2)
+    .replace(".", ",");
+
   return (
     <CartContainer show={show}>
       <div onClick={handleShowCart}>
@@ -117,9 +127,17 @@ export const Cart = ({ show }) => {
         </div>
       ) : (
         <div>
-          <ul></ul>
+          <ul>
+            {cartFiltred.map((item, index) => (
+              <li key={index}>
+                <CardCart item={item} />
+              </li>
+            ))}
+          </ul>
           <span>previsão de entrega: 21/11</span>
-          <span>subTotal</span>
+          <br />
+          <span>{`Subtotal: R$ ${totalPrice}`}</span>
+          <br />
           <button>Finalizar compra</button>
         </div>
       )}
