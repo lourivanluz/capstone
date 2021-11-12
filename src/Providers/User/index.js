@@ -1,9 +1,5 @@
 import { createContext, useContext, useState } from "react";
-<<<<<<< HEAD
-import api from "../../Services";
-=======
 import api from "../../Services/";
->>>>>>> develop
 
 const UserContext = createContext();
 
