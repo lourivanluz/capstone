@@ -3,13 +3,23 @@ import { RiShoppingBag2Fill } from "react-icons/ri";
 import { CartContainer } from "./style";
 import { useCart } from "../../Providers/Cart";
 import { CardCart } from "../CardCart";
+import { useHistory } from "react-router-dom";
 
 export const Cart = ({ show }) => {
   const { cartList, handleShowCart } = useCart();
+  const history = useHistory();
 
   const cartFiltred = cartList.filter((item, index, array) => {
     return array.map((item) => item.id).indexOf(item.id) === index;
   });
+
+  const handleBuy = () => {
+    if (localStorage.getItem("@BHealthy: user")) {
+      console.log("compra finalizada");
+    } else {
+      history.push("/confirm");
+    }
+  };
 
   const totalPrice = cartList
     .reduce(
@@ -43,7 +53,7 @@ export const Cart = ({ show }) => {
           <br />
           <span>{`Subtotal: R$ ${totalPrice}`}</span>
           <br />
-          <button>Finalizar compra</button>
+          <button onClick={handleBuy}>Finalizar compra</button>
         </div>
       )}
     </CartContainer>
