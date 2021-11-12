@@ -1,11 +1,14 @@
-import { FormCheckout } from "./Components/forms/formCheckout";
+import { Cart } from "./Components/Cart";
+import { useCart } from "./Providers/Cart";
 import { Routers } from "./Routes";
 
 function App() {
+  const { handleShowCart, showCart } = useCart();
   return (
     <div>
+      <button onClick={handleShowCart}>cart</button>
       <Routers />
-      <FormCheckout />
+      <Cart show={showCart} />
     </div>
   );
 }
