@@ -30,16 +30,22 @@ export const FormCheckout = () => {
     <form onSubmit={handleSubmit(handleData)}>
       <input placeholder="Nome" type="text" {...register("name")} />
       {errors && <p>{errors.name?.message}</p>}
+
       <input placeholder="Email" type="email" {...register("email")} />
       {errors && <p>{errors.email?.message}</p>}
+
       <input placeholder="Telefone" type="number" {...register("phone")} />
       {errors && <p>{errors.phone?.message}</p>}
+
       <input placeholder="Cep" type="number" {...register("cep")} />
       {errors && <p>{errors.cep?.message}</p>}
+
       <input placeholder="Endereço" type="text" {...register("adress")} />
       {errors && <p>{errors.adress?.message}</p>}
+
       <input placeholder="Bairro" type="text" {...register("area")} />
       {errors && <p>{errors.area?.message}</p>}
+
       <input placeholder="Número" type="text" {...register("number")} />
       {errors && <p>{errors.number?.message}</p>}
       <input
@@ -48,7 +54,7 @@ export const FormCheckout = () => {
         {...register("complement")}
       />
       {errors && <p>{errors.complement?.message}</p>}
-      <button type="submit">Tudo Pronto</button>
+      <button type="submit">cadastro</button>
     </form>
   );
 };
