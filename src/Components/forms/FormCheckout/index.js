@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useCart } from "../../../Providers/Cart";
 
 export const FormCheckout = () => {
   const formSchema = yup.object().shape({
@@ -14,6 +15,8 @@ export const FormCheckout = () => {
     complement: yup.string().required("Complemento obrigatório"),
   });
 
+  const { setShowCart } = useCart();
+
   const {
     register,
     handleSubmit,
@@ -23,6 +26,7 @@ export const FormCheckout = () => {
   });
 
   const handleData = (data) => {
+    setShowCart(true);
     localStorage.setItem(JSON.stringify(data), "@BHealthy: user");
   };
 
