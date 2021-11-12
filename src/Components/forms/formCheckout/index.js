@@ -23,7 +23,7 @@ export const FormCheckout = () => {
   });
 
   const handleData = (_) => {
-    console.log("mudei o showCart pra true");
+    console.log("mudei o showCart pra true e enviar pro local storege @h user");
   };
 
   return (
