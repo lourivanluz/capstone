@@ -63,8 +63,19 @@ export const UserProvider = ({ children }) => {
   };
 
   const editAccount = (userInput) => {
+    let payload = {};
+
+    !!userInput.name && (payload.name = userInput.name);
+    !!userInput.email && (payload.email = userInput.email);
+    !!userInput.phone && (payload.phone = userInput.phone);
+    !!userInput.cep && (payload.cep = userInput.cep);
+    !!userInput.address && (payload.address = userInput.address);
+    !!userInput.area && (payload.area = userInput.area);
+    !!userInput.number && (payload.number = userInput.number);
+    !!userInput.complement && (payload.complement = userInput.complement);
+
     api
-      .patch(`/users/${data.user.id}`, userInput, {
+      .patch(`/users/${data.user.id}`, payload, {
         headers: { Authorization: `Bearer ${data.accessToken}` },
       })
       .then((response) => {
