@@ -19,6 +19,7 @@ export const UserProvider = ({ children }) => {
 
   const createAccount = (userInput) => {
     const payload = {
+      subscriber: false,
       name: userInput.name,
       email: userInput.email,
       phone: userInput.phone,
@@ -84,6 +85,19 @@ export const UserProvider = ({ children }) => {
       .catch((_) => console.log("Desculpe, algo deu errado"));
   };
 
+  const subscribeAccount = () => {
+    let payload = { subscriber: true };
+
+    api
+      .patch(`/users/${data.user.id}`, payload, {
+        headers: { Authorization: `Bearer ${data.accessToken}` },
+      })
+      .then((response) => {
+        setData({ accessToken: data.accessToken, response });
+      })
+      .catch((_) => console.log("Desculpe, algo deu errado"));
+  };
+
   return (
     <UserContext.Provider
       value={{
@@ -92,6 +106,7 @@ export const UserProvider = ({ children }) => {
         createAccount,
         loginAccount,
         editAccount,
+        subscribeAccount,
       }}
     >
       {children}
