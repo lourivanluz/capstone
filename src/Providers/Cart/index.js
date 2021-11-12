@@ -40,6 +40,7 @@ export const CartProvider = ({ children }) => {
         rmvToCart,
         addToCart,
         clearCart,
+        showCart,
         cartList,
       }}
     >
