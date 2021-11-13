@@ -7,7 +7,7 @@ export const CartProvider = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
 
   const addToCart = (product) => {
-    setCartList([...cartList]);
+    setCartList([...cartList, product]);
   };
 
   const rmvToCart = (idProduct) => {

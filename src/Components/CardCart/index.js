@@ -17,7 +17,7 @@ export const CardCart = ({ item }) => {
         <div>{`Preço: ${item.price}`}</div>
         <div className="quantity">
           <button onClick={() => rmvToCart(item.id)}>-</button>
-          <span>{quantity}</span>
+          <span>{quantity.length}</span>
           <button onClick={() => addToCart(item)}>+</button>
         </div>
       </div>
