@@ -12,6 +12,12 @@ export const UserDraw = ({ setShowUserDrop }) => {
     setShowUserDrop(false);
   };
 
+  const logout = () => {
+    localStorage.removeItem("@BHealthy: accessToken");
+    localStorage.removeItem("@BHealthy: user");
+    setShowUserDrop(false);
+  };
+
   return (
     <UserDrawContainer>
       {!accessToken ? (
@@ -27,8 +33,8 @@ export const UserDraw = ({ setShowUserDrop }) => {
         </div>
       ) : (
         <ul>
-          <li>Editar perfil</li>
-          <li>Logout</li>
+          <li onClick={handleRegister}>Editar perfil</li>
+          <li onClick={logout}>Logout</li>
         </ul>
       )}
     </UserDrawContainer>
