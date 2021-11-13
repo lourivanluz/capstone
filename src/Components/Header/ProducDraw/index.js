@@ -12,7 +12,7 @@ export const ProductsDraw = ({ setDropDraw }) => {
     <ProductsDrawStyle onMouseEnter={() => setDropDraw(true)}>
       <ul onMouseLeave={() => setDropDraw(false)}>
         {categoryFiltred.map((item, index) => (
-          <li key={index}>
+          <li key={index} onClick={() => setDropDraw(false)}>
             <Link to={`/products/filter/${item.category}`}>
               {item.category}
             </Link>
