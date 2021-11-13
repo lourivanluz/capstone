@@ -13,7 +13,9 @@ export const ProductsDraw = ({ setDropDraw }) => {
       <ul onMouseLeave={() => setDropDraw(false)}>
         {categoryFiltred.map((item, index) => (
           <li key={index}>
-            <Link to={`/products/${item.category}`}>{item.category}</Link>
+            <Link to={`/products/filter/${item.category}`}>
+              {item.category}
+            </Link>
           </li>
         ))}
       </ul>

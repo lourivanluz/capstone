@@ -4,7 +4,7 @@ import LoginForm from "../../LoginForm";
 import { UserDrawContainer } from "./style";
 
 export const UserDraw = ({ setShowUserDrop }) => {
-  const { accessToken } = useUser();
+  const { accessToken, logout } = useUser();
   const history = useHistory();
 
   const handleRegister = () => {
@@ -12,9 +12,9 @@ export const UserDraw = ({ setShowUserDrop }) => {
     setShowUserDrop(false);
   };
 
-  const logout = () => {
-    localStorage.removeItem("@BHealthy: accessToken");
-    localStorage.removeItem("@BHealthy: user");
+  const handleLogout = () => {
+    logout();
+    console.log(accessToken);
     setShowUserDrop(false);
   };
 
@@ -34,7 +34,7 @@ export const UserDraw = ({ setShowUserDrop }) => {
       ) : (
         <ul>
           <li onClick={handleRegister}>Editar perfil</li>
-          <li onClick={logout}>Logout</li>
+          <li onClick={handleLogout}>Logout</li>
         </ul>
       )}
     </UserDrawContainer>

@@ -7,12 +7,9 @@ const UserContext = createContext();
 export const useUser = () => useContext(UserContext);
 
 export const UserProvider = ({ children }) => {
-  const [accessToken, setAssessToken] = useState("");
-  const [user, setUser] = useState("");
-
   const [data, setData] = useState(() => {
-    setAssessToken(localStorage.getItem("@BHealthy: accessToken"));
-    setUser(localStorage.getItem("@BHealthy: user"));
+    const accessToken = localStorage.getItem("@BHealthy: accessToken");
+    const user = localStorage.getItem("@BHealthy: user");
 
     if (accessToken && user) {
       return { accessToken, user: JSON.parse(user) };
@@ -22,10 +19,9 @@ export const UserProvider = ({ children }) => {
   });
 
   const logout = () => {
+    setData({});
     localStorage.removeItem("@BHealthy: accessToken");
     localStorage.removeItem("@BHealthy: user");
-    setUser("");
-    setAssessToken("");
   };
 
   const createAccount = (userInput) => {

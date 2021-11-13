@@ -13,14 +13,10 @@ export const Routers = () => {
       <Route exact path="/">
         <Home />
       </Route>
-<<<<<<< HEAD
-      <Route exact path=" /products/:category">
-=======
-      <Route exact path="/products">
->>>>>>> develop
+      <Route exact path=" /products/filter/:category">
         <Products />
       </Route>
-      <Route path="/products/:id">
+      <Route exact path="/products/:id">
         <ProductsDeteil />
       </Route>
       <Route path="/about">
