@@ -33,13 +33,14 @@ export const HeaderContainer = styled.header`
         display: flex;
         align-items: center;
         position: absolute;
-        left: 140px;
+        left: 100px;
         height: 100%;
         span {
           margin-right: 15px;
           background-color: violet;
           height: 100%;
           display: flex;
+          padding-left: 20px;
           align-items: center;
         }
       }

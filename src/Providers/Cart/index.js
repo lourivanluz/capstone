@@ -28,14 +28,9 @@ export const CartProvider = ({ children }) => {
     setCartList([]);
   };
 
-  const handleShowCart = () => {
-    setShowCart(!showCart);
-  };
-
   return (
     <CartContext.Provider
       value={{
-        handleShowCart,
         rmvAllIDProducts,
         rmvToCart,
         addToCart,

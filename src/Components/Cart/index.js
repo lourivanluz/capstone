@@ -6,8 +6,12 @@ import { CardCart } from "../CardCart";
 import { useHistory } from "react-router-dom";
 
 export const Cart = ({ show }) => {
-  const { cartList, handleShowCart } = useCart();
+  const { cartList, setShowCart } = useCart();
   const history = useHistory();
+
+  const handleShowCart = () => {
+    setShowCart(false);
+  };
 
   const cartFiltred = cartList.filter((item, index, array) => {
     return array.map((item) => item.id).indexOf(item.id) === index;
