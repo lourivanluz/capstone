@@ -1,11 +1,11 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:3001/",
+  baseURL: "https://behelty-api.herokuapp.com/",
 });
 
 const getHeaders = () => {
-  const token = localStorage.getItem("token") || "";
+  const token = localStorage.getItem("@BHealthy: accessToken") || "";
   const headers = !!token
     ? {
         headers: {
@@ -46,6 +46,12 @@ const genericPatch = (url, data) => {
 
 export const getProducts = () => {
   const url = "/produtos";
+
+  return genericGet(url);
+};
+
+export const getProductsPerCategory = (category) => {
+  const url = `/produtos?category=${category}`;
 
   return genericGet(url);
 };
