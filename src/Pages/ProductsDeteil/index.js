@@ -1,3 +1,9 @@
+import ProductDetails from "../../Components/ProductDetails";
+
 export const ProductsDeteil = () => {
-  return <div>ProductsDeteil</div>;
+  return (
+    <div>
+      <ProductDetails />
+    </div>
+  );
 };

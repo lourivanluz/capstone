@@ -13,7 +13,11 @@ export const Routers = () => {
       <Route exact path="/">
         <Home />
       </Route>
+<<<<<<< HEAD
       <Route exact path=" /products/:category">
+=======
+      <Route exact path="/products">
+>>>>>>> develop
         <Products />
       </Route>
       <Route path="/products/:id">

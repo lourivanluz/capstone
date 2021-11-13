@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { useHistory } from "react-router";
 import api from "../../Services/";
 
 const UserContext = createContext();
@@ -6,9 +7,12 @@ const UserContext = createContext();
 export const useUser = () => useContext(UserContext);
 
 export const UserProvider = ({ children }) => {
+  const [accessToken, setAssessToken] = useState("");
+  const [user, setUser] = useState("");
+
   const [data, setData] = useState(() => {
-    const accessToken = localStorage.getItem("@BHealthy: accessToken");
-    const user = localStorage.getItem("@BHealthy: user");
+    setAssessToken(localStorage.getItem("@BHealthy: accessToken"));
+    setUser(localStorage.getItem("@BHealthy: user"));
 
     if (accessToken && user) {
       return { accessToken, user: JSON.parse(user) };
@@ -16,6 +20,13 @@ export const UserProvider = ({ children }) => {
 
     return {};
   });
+
+  const logout = () => {
+    localStorage.removeItem("@BHealthy: accessToken");
+    localStorage.removeItem("@BHealthy: user");
+    setUser("");
+    setAssessToken("");
+  };
 
   const createAccount = (userInput) => {
     const payload = {
@@ -107,6 +118,7 @@ export const UserProvider = ({ children }) => {
         loginAccount,
         editAccount,
         subscribeAccount,
+        logout,
       }}
     >
       {children}
