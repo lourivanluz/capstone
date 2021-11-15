@@ -53,8 +53,8 @@ export const UserProvider = ({ children }) => {
 
   const loginAccount = (userInput) => {
     const payload = {
-      name: userInput.name,
       email: userInput.email,
+      password: userInput.password,
     };
 
     api
