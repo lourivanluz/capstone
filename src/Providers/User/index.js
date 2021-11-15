@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { useHistory } from "react-router";
 import api from "../../Services/";
 
 const UserContext = createContext();
@@ -16,6 +17,12 @@ export const UserProvider = ({ children }) => {
 
     return {};
   });
+
+  const logout = () => {
+    setData({});
+    localStorage.removeItem("@BHealthy: accessToken");
+    localStorage.removeItem("@BHealthy: user");
+  };
 
   const createAccount = (userInput) => {
     const payload = {
@@ -107,6 +114,7 @@ export const UserProvider = ({ children }) => {
         loginAccount,
         editAccount,
         subscribeAccount,
+        logout,
       }}
     >
       {children}
