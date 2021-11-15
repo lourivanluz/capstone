@@ -4,9 +4,12 @@ import { CartContainer } from "./style";
 import { useCart } from "../../Providers/Cart";
 import { CardCart } from "../CardCart";
 import { useHistory } from "react-router-dom";
+import { useUser } from "../../Providers/User";
 
 export const Cart = ({ show }) => {
   const { cartList, setShowCart } = useCart();
+  const { user } = useUser();
+
   const history = useHistory();
 
   const handleShowCart = () => {
@@ -25,14 +28,13 @@ export const Cart = ({ show }) => {
     }
   };
 
-  const totalPrice = cartList
-    .reduce(
-      (acc, item) =>
-        Number(item.price.replace("R$ ", "").replace(",", ".")) + acc,
-      0
-    )
-    .toFixed(2)
-    .replace(".", ",");
+  const totalPrice = cartList.reduce(
+    (acc, item) =>
+      Number(item.price.replace("R$ ", "").replace(",", ".")) + acc,
+    0
+  );
+
+  const priceForSubscribe = totalPrice - totalPrice * 0.1;
 
   return (
     <CartContainer show={show}>
@@ -55,9 +57,12 @@ export const Cart = ({ show }) => {
           </ul>
           <span>previsão de entrega: 21/11</span>
           <br />
-          <span>{`Subtotal: R$ ${totalPrice}`}</span>
+          <span>{`Subtotal: R$ ${totalPrice}`}</span> <br />
+          <span>{`Total para assinantes: R$ ${priceForSubscribe.toFixed(
+            2
+          )}`}</span>
           <br />
-          <button onClick={handleBuy}>Finalizar compra</button>
+          <button onClick={() => console.log(user)}>Finalizar compra</button>
         </div>
       )}
     </CartContainer>
