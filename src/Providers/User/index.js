@@ -24,33 +24,6 @@ export const UserProvider = ({ children }) => {
     localStorage.removeItem("@BHealthy: user");
   };
 
-  const createAccount = (userInput) => {
-    const payload = {
-      subscriber: false,
-      name: userInput.name,
-      email: userInput.email,
-      phone: userInput.phone,
-      password: userInput.password,
-      cep: userInput.cep,
-      address: userInput.address,
-      area: userInput.cep,
-      number: userInput.number,
-      complement: userInput.complement,
-    };
-
-    api
-      .post("/register", payload)
-      .then((response) => {
-        const { accessToken, user } = response.data;
-
-        localStorage.setItem("@BHealthy: accessToken", accessToken);
-        localStorage.setItem("@BHealthy: user", JSON.stringify(user));
-
-        setData({ accessToken, user });
-      })
-      .catch((_) => console.log("Email já cadastrado"));
-  };
-
   const loginAccount = (userInput) => {
     const payload = {
       email: userInput.email,
@@ -68,6 +41,28 @@ export const UserProvider = ({ children }) => {
         setData({ accessToken, user });
       })
       .catch((_) => console.log("Email ou senha incorretos"));
+  };
+
+  const createAccount = (userInput) => {
+    const payload = {
+      subscriber: false,
+      name: userInput.name,
+      email: userInput.email,
+      phone: userInput.phone,
+      password: userInput.password,
+      cep: userInput.cep,
+      address: userInput.address,
+      area: userInput.cep,
+      number: userInput.number,
+      complement: userInput.complement,
+    };
+
+    api
+      .post("/register", payload)
+      .then((_) => {
+        loginAccount(payload);
+      })
+      .catch((_) => console.log("Email já cadastrado"));
   };
 
   const editAccount = (userInput) => {
