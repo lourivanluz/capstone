@@ -93,7 +93,7 @@ export const UserProvider = ({ children }) => {
   };
 
   const subscribeAccount = () => {
-    let payload = { subscriber: true };
+    const payload = { subscriber: true };
 
     api
       .patch(`/users/${data.user.id}`, payload, {
