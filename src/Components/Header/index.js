@@ -9,12 +9,16 @@ import { useCart } from "../../Providers/Cart";
 import { Cart } from "../Cart";
 import { UserDraw } from "./UserDraw";
 import { Search } from "./Search";
+import { BoxsDraw } from "./BoxsDraw";
+import { useHistory } from "react-router";
 
 export const Header = () => {
-  const [dropDraw, setDropDraw] = useState(false);
+  const [dropDrawProduct, setDropDrawProduct] = useState(false);
+  const [dropDrawBox, setDropDrawBox] = useState(false);
   const [showUserDrop, setShowUserDrop] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const { showCart, setShowCart } = useCart();
+  const history = useHistory();
 
   const handleShowCart = () => {
     setShowCart(!showCart);
@@ -28,15 +32,22 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <div className="header">
-        <div className="logo">logo</div>
+        <div className="logo" onClick={() => history.push("/")}>
+          logo
+        </div>
         <div className="filters">
           <span
-            onMouseEnter={() => setDropDraw(true)}
-            onMouseLeave={() => setDropDraw(false)}
+            onMouseEnter={() => setDropDrawProduct(true)}
+            onMouseLeave={() => setDropDrawProduct(false)}
           >
-            opçoes de box
+            Categorias
           </span>
-          <span>filtro produto</span>
+          <span
+            onMouseEnter={() => setDropDrawBox(true)}
+            onMouseLeave={() => setDropDrawBox(false)}
+          >
+            Nossas Boxs
+          </span>
           <button>Compre uma box</button>
         </div>
         <div className="menuContainer">
@@ -53,7 +64,11 @@ export const Header = () => {
             onClick={handleShowCart}
           />
         </div>
-        {dropDraw && <ProductsDraw setDropDraw={setDropDraw} />}
+        {dropDrawProduct && (
+          <ProductsDraw setDropDrawProduct={setDropDrawProduct} />
+        )}
+        {dropDrawBox && <BoxsDraw setDropDrawBox={setDropDrawBox} />}
+
         <Cart show={showCart} />
         {showUserDrop && <UserDraw setShowUserDrop={setShowUserDrop} />}
         {showSearch && <Search setShowSearch={setShowSearch} />}
