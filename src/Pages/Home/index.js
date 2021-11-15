@@ -1,5 +1,6 @@
 import { Banner } from "../../Components/Banner";
 import CarouselProducts from "../../Components/CarouselProducts";
+import { PageBase } from "../../Components/PageBase";
 import { useProducts } from "../../Providers/Products";
 
 export const Home = () => {
@@ -19,7 +20,7 @@ export const Home = () => {
   );
 
   return (
-    <div>
+    <PageBase>
       <Banner />
       <div style={{ backgroundColor: "red" }}>
         <h1>Carnes:</h1>
@@ -49,6 +50,6 @@ export const Home = () => {
         <h1>Sopas e cremes:</h1>
         <CarouselProducts products={soupsList} />
       </div>
-    </div>
+    </PageBase>
   );
 };
