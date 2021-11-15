@@ -1,5 +1,6 @@
 import { useParams } from "react-router";
 import { useProducts } from "../../Providers/Products";
+import CardProduct from "../CardProduct";
 
 export const ProductFiltred = () => {
   const { category } = useParams();
@@ -12,7 +13,9 @@ export const ProductFiltred = () => {
     <div>
       <ul>
         {listCategory.map((item, index) => (
-          <li key={index}>{item.title}</li>
+          <li key={index}>
+            <CardProduct product={item} />
+          </li>
         ))}
       </ul>
     </div>
