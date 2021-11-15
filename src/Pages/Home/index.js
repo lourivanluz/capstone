@@ -1,3 +1,4 @@
+import { Banner } from "../../Components/Banner";
 import CarouselProducts from "../../Components/CarouselProducts";
 import { useProducts } from "../../Providers/Products";
 
@@ -19,6 +20,7 @@ export const Home = () => {
 
   return (
     <div>
+      <Banner />
       <div style={{ backgroundColor: "red" }}>
         <h1>Carnes:</h1>
         <CarouselProducts products={meatList} />
