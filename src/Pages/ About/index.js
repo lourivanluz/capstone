@@ -1,3 +1,5 @@
+import AboutInfo from "../../Components/AboutnInfo";
+
 export const About = () => {
-  return <div>About</div>;
+  return <AboutInfo />;
 };
