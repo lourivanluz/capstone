@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const ProductCardContainer = styled.li`
   width: 200px;
+  min-width: 200px;
   height: 300px;
   display: flex;
   flex-direction: column;
