@@ -46,7 +46,9 @@ export const HeaderContainer = styled.header`
       }
     }
     .icons {
-      padding: 10px;
+      height: 24px;
+      width: 24px;
+      margin: 0 8px;
     }
     .icon-search {
       position: absolute;
