@@ -1,3 +1,4 @@
+import { CssBaseline } from "@mui/material";
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
@@ -9,7 +10,8 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Providers>
-        <ResetCss />
+        {/* <ResetCss /> */}
+        <CssBaseline />
         <App />
       </Providers>
     </BrowserRouter>
