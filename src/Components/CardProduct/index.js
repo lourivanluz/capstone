@@ -6,6 +6,9 @@ const CardProduct = ({ product }) => {
   const { addToCart } = useCart();
   const history = useHistory();
 
+  const price = Number(product.price.replace("R$ ", "").replace(",", "."));
+  const priceDiscount = price - price * 0.1;
+
   return (
     <ProductCardContainer>
       <img
@@ -17,8 +20,12 @@ const CardProduct = ({ product }) => {
         {product.title}
       </p>
       <div>
+        <span>{"Filiado"}</span>
+        <span>{`R$ ${priceDiscount.toFixed(2).replace(".", ",")}`}</span>
+      </div>
+      <div>
         <span>{product.weight}</span>
-        <span>{product.price}</span>
+        <span>{`R$ ${price.toFixed(2).replace(".", ",")}`}</span>
       </div>
       <button onClick={() => addToCart(product)}>Adicionar</button>
     </ProductCardContainer>
