@@ -8,7 +8,8 @@ import { useUser } from "../../Providers/User";
 
 export const Cart = ({ show }) => {
   const { cartList, setShowCart } = useCart();
-  const { user } = useUser();
+  const haveBox = cartList.filter((item) => item.category === "boxs");
+  const { user, subscribeAccount } = useUser();
 
   const history = useHistory();
 
@@ -22,7 +23,10 @@ export const Cart = ({ show }) => {
 
   const handleBuy = () => {
     if (localStorage.getItem("@BHealthy: user")) {
-      console.log("compra finalizada");
+      if (haveBox) {
+        subscribeAccount();
+      }
+      console.log("comprou");
     } else {
       history.push("/confirm");
     }
@@ -57,12 +61,13 @@ export const Cart = ({ show }) => {
           </ul>
           <span>previsão de entrega: 21/11</span>
           <br />
+          {/* usar o user.subscribe como parametro pra riscar um dos dois preços no styled componente */}
           <span>{`Subtotal: R$ ${totalPrice}`}</span> <br />
           <span>{`Total para assinantes: R$ ${priceForSubscribe.toFixed(
             2
           )}`}</span>
           <br />
-          <button onClick={() => console.log(user)}>Finalizar compra</button>
+          <button onClick={handleBuy}>Finalizar compra</button>
         </div>
       )}
     </CartContainer>
