@@ -19,9 +19,6 @@ export const Search = ({ setShowSearch }) => {
           value={userInput}
           onChange={(e) => setUserInput(e.target.value)}
         />
-        <button>
-          <ImSearch />
-        </button>
         <button className="closeSearch" onClick={() => setShowSearch(false)}>
           x
         </button>
