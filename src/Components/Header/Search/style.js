@@ -8,6 +8,7 @@ export const SearchContainer = styled.div`
   background-color: yellow;
   top: 0;
   left: 0;
+  overflow-y: auto;
   .inputsContainer {
     height: 50px;
     display: flex;

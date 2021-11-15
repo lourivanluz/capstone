@@ -2,6 +2,7 @@ import { SearchContainer } from "./style";
 import { ImSearch } from "react-icons/im";
 import { useEffect, useState } from "react";
 import { useProducts } from "../../../Providers/Products";
+import CardSearch from "../../CardSearch";
 
 export const Search = ({ setShowSearch }) => {
   const [userInput, setUserInput] = useState("");
@@ -29,7 +30,7 @@ export const Search = ({ setShowSearch }) => {
 
       <ul>
         {filteredInputProducts.map((product) => (
-          <li>{product.title}</li>
+          <CardSearch product={product} setShowSearch={setShowSearch} />
         ))}
       </ul>
     </SearchContainer>
