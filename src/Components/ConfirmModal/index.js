@@ -11,15 +11,16 @@ const ConfirmModal = ({ haveBox, setShowModal }) => {
   };
 
   const handlePurchase = () => {
-    if (haveBox && user) {
+    console.log(!!haveBox);
+    console.log(user);
+    if (haveBox) {
       subscribeAccount();
       clearCart();
+
       console.log("Compra finalizada");
-    } else if (haveBox && !user) {
-      console.log("Crie uma conta para comprar um box");
     } else {
       clearCart();
-      localStorage.removeItem("@BHealthy: checkout");
+
       console.log("Compra finalizada");
     }
     setShowModal(false);

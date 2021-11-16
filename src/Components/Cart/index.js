@@ -10,7 +10,7 @@ import { useState } from "react";
 export const Cart = ({ show }) => {
   const { cartList, setShowCart } = useCart();
 
-  const haveBox = cartList.filter((item) => item.category === "boxs");
+  const [haveBox] = cartList.filter((item) => item.category === "boxs");
   const [showModal, setShowModal] = useState(false);
 
   const history = useHistory();
@@ -23,13 +23,11 @@ export const Cart = ({ show }) => {
   });
 
   const handleBuy = () => {
-    if (
-      localStorage.getItem("@BHealthy: user") ||
-      localStorage.getItem("@BHealthy: checkout")
-    ) {
+    console.log(haveBox);
+    if (localStorage.getItem("@BHealthy: user")) {
       setShowModal(true);
     } else {
-      history.push("/confirm");
+      history.push("/register");
     }
   };
 
@@ -63,7 +61,7 @@ export const Cart = ({ show }) => {
           <span>previsão de entrega: 21/11</span>
           <br />
           {/* usar o user.subscribe como parametro pra riscar um dos dois preços no styled componente */}
-          <span>{`Subtotal: R$ ${totalPrice}`}</span> <br />
+          <span>{`Subtotal: R$ ${totalPrice.toFixed(2)}`}</span> <br />
           <span>{`Total para assinantes: R$ ${priceForSubscribe.toFixed(
             2
           )}`}</span>

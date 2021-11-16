@@ -10,7 +10,10 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (product) => {
     setCartList([...cartList, product]);
-    localStorage.setItem("@BHealthy: cart", JSON.stringify(cartList));
+    localStorage.setItem(
+      "@BHealthy: cart",
+      JSON.stringify([...cartList, product])
+    );
   };
 
   const rmvToCart = (idProduct) => {
@@ -20,18 +23,21 @@ export const CartProvider = ({ children }) => {
       .slice(1);
     const filtred = cartList.filter((item) => item.id !== idProduct);
     setCartList([...filtred, ...newCartList]);
-    localStorage.setItem("@BHealthy: cart", JSON.stringify(cartList));
+    localStorage.setItem(
+      "@BHealthy: cart",
+      JSON.stringify([...filtred, ...newCartList])
+    );
   };
 
   const rmvAllIDProducts = (idProduct) => {
     const newCartList = cartList.filter((item) => item.id !== idProduct);
     setCartList(newCartList);
-    localStorage.setItem("@BHealthy: cart", JSON.stringify(cartList));
+    localStorage.setItem("@BHealthy: cart", JSON.stringify(newCartList));
   };
 
   const clearCart = () => {
     setCartList([]);
-    localStorage.setItem("@BHealthy: cart", JSON.stringify(cartList));
+    localStorage.setItem("@BHealthy: cart", JSON.stringify([]));
   };
 
   return (

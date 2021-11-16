@@ -96,6 +96,7 @@ export const UserProvider = ({ children }) => {
       })
       .then((response) => {
         setData({ accessToken: data.accessToken, response });
+        localStorage.setItem("@BHealthy: user", JSON.stringify(response.data));
       })
       .catch((_) => console.log("Desculpe, algo deu errado"));
   };
