@@ -1,10 +1,13 @@
 import { Banner } from "../../Components/Banner";
+import CarouselBoxes from "../../Components/CarouselBoxes";
 import CarouselProducts from "../../Components/CarouselProducts";
 import { PageBase } from "../../Components/PageBase";
+import { useBox } from "../../Providers/Box";
 import { useProducts } from "../../Providers/Products";
 
 export const Home = () => {
   const { products } = useProducts();
+  const { boxList } = useBox();
   const meatList = products.filter(
     (item) => item.category === "carnes vermelhas"
   );
@@ -25,6 +28,10 @@ export const Home = () => {
       <div style={{ backgroundColor: "red" }}>
         <h1>Carnes:</h1>
         <CarouselProducts products={meatList} />
+      </div>
+      <div style={{ backgroundColor: "red" }}>
+        <h1>Boxes:</h1>
+        <CarouselBoxes products={boxList} />
       </div>
       <div style={{ backgroundColor: "red" }}>
         <h1>Frangos:</h1>
