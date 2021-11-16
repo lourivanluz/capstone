@@ -4,15 +4,15 @@ import { CartContainer } from "./style";
 import { useCart } from "../../Providers/Cart";
 import { CardCart } from "../CardCart";
 import { useHistory } from "react-router-dom";
-import { useUser } from "../../Providers/User";
+import ConfirmModal from "../ConfirmModal";
+import { useState } from "react";
 
 export const Cart = ({ show }) => {
   const { cartList, setShowCart } = useCart();
   const haveBox = cartList.filter((item) => item.category === "boxs");
-  const { user, subscribeAccount } = useUser();
+  const [showModal, setShowModal] = useState(false);
 
   const history = useHistory();
-
   const handleShowCart = () => {
     setShowCart(false);
   };
@@ -22,11 +22,11 @@ export const Cart = ({ show }) => {
   });
 
   const handleBuy = () => {
-    if (localStorage.getItem("@BHealthy: user")) {
-      if (haveBox) {
-        subscribeAccount();
-      }
-      console.log("comprou");
+    if (
+      localStorage.getItem("@BHealthy: user") ||
+      localStorage.getItem("@BHealthy: checkout")
+    ) {
+      setShowModal(true);
     } else {
       history.push("/confirm");
     }
@@ -69,6 +69,9 @@ export const Cart = ({ show }) => {
           <br />
           <button onClick={handleBuy}>Finalizar compra</button>
         </div>
+      )}
+      {showModal && (
+        <ConfirmModal haveBox={haveBox} setShowModal={setShowModal} />
       )}
     </CartContainer>
   );
