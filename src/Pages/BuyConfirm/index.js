@@ -1,3 +1,5 @@
+import { FormCheckout } from "../../Components/forms/FormCheckout";
+
 export const BuyConfirm = () => {
-  return <div>confirmaçao de compra</div>;
+  return <FormCheckout />;
 };

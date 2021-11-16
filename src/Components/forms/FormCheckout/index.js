@@ -27,7 +27,7 @@ export const FormCheckout = () => {
 
   const handleData = (data) => {
     setShowCart(true);
-    localStorage.setItem(JSON.stringify(data), "@BHealthy: user");
+    localStorage.setItem("@BHealthy: checkout", JSON.stringify(data));
   };
 
   return (
