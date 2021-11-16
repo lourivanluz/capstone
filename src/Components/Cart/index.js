@@ -9,6 +9,7 @@ import { useState } from "react";
 
 export const Cart = ({ show }) => {
   const { cartList, setShowCart } = useCart();
+
   const haveBox = cartList.filter((item) => item.category === "boxs");
   const [showModal, setShowModal] = useState(false);
 
