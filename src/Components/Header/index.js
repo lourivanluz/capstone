@@ -11,18 +11,24 @@ import { UserDraw } from "./UserDraw";
 import { Search } from "./Search";
 import { BoxsDraw } from "./BoxsDraw";
 import { useHistory } from "react-router";
+import { MenuMobile } from "./MenuMobile";
 
 export const Header = () => {
   const [dropDrawProduct, setDropDrawProduct] = useState(false);
   const [dropDrawBox, setDropDrawBox] = useState(false);
   const [showUserDrop, setShowUserDrop] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const { showCart, setShowCart } = useCart();
   const history = useHistory();
 
   const handleShowCart = () => {
     setShowCart(!showCart);
     setShowUserDrop(false);
+  };
+
+  const handleShowMenu = () => {
+    setShowMenu(!showMenu);
   };
 
   const handleShowUserDrop = () => {
@@ -51,7 +57,7 @@ export const Header = () => {
           <button>Compre uma box</button>
         </div>
         <div className="menuContainer">
-          <AiOutlineMenu />
+          <AiOutlineMenu onClick={handleShowMenu} />
         </div>
         <div className="iconsContainer">
           <ImSearch
@@ -70,6 +76,7 @@ export const Header = () => {
         {dropDrawBox && <BoxsDraw setDropDrawBox={setDropDrawBox} />}
 
         <Cart show={showCart} />
+        <MenuMobile show={showMenu} setShowMenu={setShowMenu} />
         {showUserDrop && <UserDraw setShowUserDrop={setShowUserDrop} />}
         {showSearch && <Search setShowSearch={setShowSearch} />}
       </div>
