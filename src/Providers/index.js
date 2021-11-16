@@ -1,3 +1,4 @@
+import { BoxProvider } from "./Box";
 import { CartProvider } from "./Cart";
 import { ProductsProvider } from "./Products";
 import { UserProvider } from "./User";
@@ -5,9 +6,11 @@ import { UserProvider } from "./User";
 export const Providers = ({ children }) => {
   return (
     <ProductsProvider>
-      <CartProvider>
-        <UserProvider>{children}</UserProvider>
-      </CartProvider>
+      <BoxProvider>
+        <CartProvider>
+          <UserProvider>{children}</UserProvider>
+        </CartProvider>
+      </BoxProvider>
     </ProductsProvider>
   );
 };

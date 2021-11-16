@@ -56,4 +56,10 @@ export const getProductsPerCategory = (category) => {
   return genericGet(url);
 };
 
+export const getProductDetails = (id) => {
+  const url = `/produtos/${id}`;
+
+  return genericGet(url);
+};
+
 export default api;

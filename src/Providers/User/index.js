@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { useHistory } from "react-router";
 import api from "../../Services/";
 
 const UserContext = createContext();
@@ -17,6 +18,31 @@ export const UserProvider = ({ children }) => {
     return {};
   });
 
+  const logout = () => {
+    setData({});
+    localStorage.removeItem("@BHealthy: accessToken");
+    localStorage.removeItem("@BHealthy: user");
+  };
+
+  const loginAccount = (userInput) => {
+    const payload = {
+      email: userInput.email,
+      password: userInput.password,
+    };
+
+    api
+      .post("/login", payload)
+      .then((response) => {
+        const { accessToken, user } = response.data;
+
+        localStorage.setItem("@BHealthy: accessToken", accessToken);
+        localStorage.setItem("@BHealthy: user", JSON.stringify(user));
+
+        setData({ accessToken, user });
+      })
+      .catch((_) => console.log("Email ou senha incorretos"));
+  };
+
   const createAccount = (userInput) => {
     const payload = {
       subscriber: false,
@@ -33,34 +59,10 @@ export const UserProvider = ({ children }) => {
 
     api
       .post("/register", payload)
-      .then((response) => {
-        const { accessToken, user } = response.data;
-
-        localStorage.setItem("@BHealthy: accessToken", accessToken);
-        localStorage.setItem("@BHealthy: user", JSON.stringify(user));
-
-        setData({ accessToken, user });
+      .then((_) => {
+        loginAccount(payload);
       })
       .catch((_) => console.log("Email já cadastrado"));
-  };
-
-  const loginAccount = (userInput) => {
-    const payload = {
-      name: userInput.name,
-      email: userInput.email,
-    };
-
-    api
-      .post("/login", payload)
-      .then((response) => {
-        const { accessToken, user } = response.data;
-
-        localStorage.setItem("@BHealthy: accessToken", accessToken);
-        localStorage.setItem("@BHealthy: user", JSON.stringify(user));
-
-        setData({ accessToken, user });
-      })
-      .catch((_) => console.log("Email ou senha incorretos"));
   };
 
   const editAccount = (userInput) => {
@@ -107,6 +109,7 @@ export const UserProvider = ({ children }) => {
         loginAccount,
         editAccount,
         subscribeAccount,
+        logout,
       }}
     >
       {children}
