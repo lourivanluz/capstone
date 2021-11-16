@@ -19,7 +19,6 @@ const ConfirmModal = ({ haveBox, setShowModal }) => {
       console.log("Crie uma conta para comprar um box");
     } else {
       clearCart();
-      localStorage.removeItem("@BHealthy: checkout");
       console.log("Compra finalizada");
     }
     setShowModal(false);
