@@ -21,7 +21,7 @@ export const UserDraw = ({ setShowUserDrop }) => {
   return (
     <UserDrawContainer>
       {!accessToken ? (
-        <div>
+        <div className="formContainer">
           <p>Entrar:</p>
           <LoginForm />
           <p>

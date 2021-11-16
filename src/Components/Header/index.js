@@ -12,6 +12,7 @@ import { Search } from "./Search";
 import { BoxsDraw } from "./BoxsDraw";
 import { useHistory } from "react-router";
 import { MenuMobile } from "./MenuMobile";
+import Logo from "./../../Assets/logo_size.jpg";
 
 export const Header = () => {
   const [dropDrawProduct, setDropDrawProduct] = useState(false);
@@ -39,7 +40,7 @@ export const Header = () => {
     <HeaderContainer>
       <div className="header">
         <div className="logo" onClick={() => history.push("/")}>
-          logo
+          <img src={Logo} />
         </div>
         <div className="filters">
           <span
@@ -54,7 +55,7 @@ export const Header = () => {
           >
             Nossas Boxs
           </span>
-          <button>Compre uma box</button>
+          <button className="buyAbox">Compre uma box</button>
         </div>
         <div className="menuContainer">
           <AiOutlineMenu onClick={handleShowMenu} />

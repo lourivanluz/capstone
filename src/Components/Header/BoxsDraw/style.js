@@ -12,8 +12,20 @@ export const BoxDrawStyle = styled.div`
   ul {
     width: 100%;
     max-width: 1024px;
-    padding: 0 10px;
-    border: 1px solid red;
+    padding: 20px 10px;
+    background-color: white;
     margin: 0 auto;
+
+    li {
+      margin: 10px;
+    }
+
+    a {
+      color: var(--fontColor-primary);
+      &:hover {
+        color: var(--color-primary);
+        text-decoration: underline;
+      }
+    }
   }
 `;

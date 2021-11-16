@@ -47,10 +47,15 @@ img{
     max-width: 100%;
     display: block;
 }
+a{
+	text-decoration: none;
+}
 
 :root{
 
 --font-primary:'Inter', sans-serif;
+--fontColor-primary:rgb(128, 128, 128);
+--color-primary:rgb(250, 2, 60);
 
 }
 `;
