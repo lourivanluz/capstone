@@ -1,12 +1,23 @@
+import { useHistory } from "react-router";
+import { useCart } from "../../Providers/Cart";
 import { BoxCardContainer } from "./style";
 
 const CardBox = ({ product }) => {
+  const { addToCart } = useCart();
+  const history = useHistory();
+
   return (
     <BoxCardContainer>
-      <img src={product.img} alt={product.title} />
+      <img
+        src={product.img}
+        alt={product.title}
+        onClick={() => history.push(`/boxDeteil/${product.id}`)}
+      />
 
       <div>
-        <p>{product.title}</p>
+        <p onClick={() => history.push(`/boxDeteil/${product.id}`)}>
+          {product.title}
+        </p>
         <span>{product.price}</span>
       </div>
       <span className="weight">{product.weight}</span>
@@ -15,7 +26,7 @@ const CardBox = ({ product }) => {
           <span className="plus">+ {product.contents[2]}</span>
           <span>Disponível no dia 30/11</span>
         </div>
-        <button>Adicionar</button>
+        <button onClick={() => addToCart(product)}>Adicionar</button>
       </div>
     </BoxCardContainer>
   );
