@@ -32,7 +32,7 @@ const ProductDetails = () => {
       </div>
       <div>
         <h2> {product.weight} </h2>
-        <h4>Peso total do alimento</h4>
+        <h4>Peso total</h4>
         <p> {product.description} </p>
         <h4>Ingredientes:</h4>
         <p> {product.ingredient} </p>
