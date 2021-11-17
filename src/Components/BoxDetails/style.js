@@ -2,23 +2,26 @@ import styled from "styled-components";
 
 export const ProductWrapper = styled.div`
   display: flex;
-  padding-top: 3.5rem;
-  flex-flow: row wrap;
+  align-items: flex-start;
   width: 1024px;
   max-width: 95vw;
+  min-height: calc(100vh - 50px);
+  padding-top: 3.5rem;
+  flex-flow: row wrap;
   margin: 0 auto;
 
   img {
-    width: 35%;
+    height: 40%;
+    width: 40%;
     object-fit: cover;
     margin-right: 4rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   div {
     width: 50%;
     padding-right: 4rem;
-    margin-bottom: 3rem;
+    margin-bottom: 8rem;
   }
 
   h1 {
@@ -79,6 +82,7 @@ export const ProductWrapper = styled.div`
       width: 90%;
       margin-left: auto;
       margin-right: auto;
+      margin-bottom: 2rem;
       padding-right: 0;
     }
 
