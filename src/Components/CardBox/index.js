@@ -1,5 +1,6 @@
 import { useHistory } from "react-router";
 import { useCart } from "../../Providers/Cart";
+import FlexButton from "../FlexButton";
 import { BoxCardContainer } from "./style";
 
 const CardBox = ({ product }) => {
@@ -26,7 +27,9 @@ const CardBox = ({ product }) => {
           <span className="plus">+ {product.contents[2]}</span>
           <span>Disponível no dia 30/11</span>
         </div>
-        <button onClick={() => addToCart(product)}>Adicionar</button>
+        <FlexButton width="90%" onClick={() => addToCart(product)}>
+          Adicionar
+        </FlexButton>
       </div>
     </BoxCardContainer>
   );

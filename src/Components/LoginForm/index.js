@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import schema from "./schema";
 import { useUser } from "../../Providers/User";
+import { TextField } from "./style";
+import FlexButton from "../FlexButton";
 
 const LoginForm = () => {
   const {
@@ -19,9 +21,24 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={handleSubmit(handleLogin)}>
-      <input placeholder="Email" {...register("email")} />
-      <input placeholder="Senha" {...register("password")} />
-      <button type="submit">Entrar</button>
+      <TextField
+        variant="standard"
+        size="small"
+        margin="dense"
+        placeholder="Email"
+        {...register("email")}
+      />
+      <TextField
+        variant="standard"
+        size="small"
+        margin="dense"
+        placeholder="Senha"
+        type="password"
+        {...register("password")}
+      />
+      <FlexButton width="90%" type="submit">
+        Entrar
+      </FlexButton>
     </form>
   );
 };

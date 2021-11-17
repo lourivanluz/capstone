@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const UserDrawContainer = styled.div`
-  width: 200px;
+  width: 250px;
+  text-align: center;
   border-radius: 0px 0px 5px 5px;
   background-color: white;
   position: absolute;
@@ -9,6 +10,22 @@ export const UserDrawContainer = styled.div`
   top: 50px;
   -webkit-animation: scale-up-tr 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: scale-up-tr 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  margin-right: 10px;
+  color: var(--fontColor-primary);
+
+  .loginP {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  button {
+    margin-top: 10px;
+  }
+
+  .registerP {
+    margin-top: 15px;
+    font-weight: bold;
+  }
 
   ul {
     padding-top: 10px;
@@ -16,6 +33,7 @@ export const UserDrawContainer = styled.div`
       color: var(--fontColor-primary);
       padding: 10px 5px;
       border-bottom: 1px solid lightgrey;
+      cursor: pointer;
       &:hover {
         color: black;
       }

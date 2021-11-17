@@ -44,7 +44,9 @@ export const ProductCardContainer = styled.li`
     font-size: 12px;
   }
   button {
-    margin-top: 20px;
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 14px;
   }
   :hover {
     transform: translate(-1px, -1px);
@@ -56,6 +58,11 @@ export const ProductCardContainer = styled.li`
     img {
       width: 180px;
       height: 120px;
+    }
+    button {
+      margin-top: 5px;
+      padding: 7px;
+      font-size: 16px;
     }
   }
 `;

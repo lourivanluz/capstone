@@ -2,6 +2,7 @@ import { PriceStyle, PriceSubscribeStyle, ProductCardContainer } from "./style";
 import { useCart } from "../../Providers/Cart";
 import { useHistory } from "react-router";
 import { useUser } from "../../Providers/User";
+import FlexButton from "../FlexButton";
 
 const CardProduct = ({ product }) => {
   const { addToCart } = useCart();
@@ -38,7 +39,9 @@ const CardProduct = ({ product }) => {
           .toFixed(2)
           .replace(".", ",")}`}</PriceSubscribeStyle>
       </div>
-      <button onClick={() => addToCart(product)}>Adicionar</button>
+      <FlexButton width="90%" onClick={() => addToCart(product)}>
+        Adicionar
+      </FlexButton>
     </ProductCardContainer>
   );
 };
