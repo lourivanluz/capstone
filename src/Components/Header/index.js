@@ -20,9 +20,8 @@ export const Header = () => {
   const [showUserDrop, setShowUserDrop] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  const { showCart, setShowCart } = useCart();
+  const { showCart, setShowCart, cartList } = useCart();
   const history = useHistory();
-
   const handleShowCart = () => {
     setShowCart(!showCart);
     setShowUserDrop(false);
@@ -66,10 +65,15 @@ export const Header = () => {
             onClick={() => setShowSearch(true)}
           />
           <FaUserAlt className="icons icon-user" onClick={handleShowUserDrop} />
-          <RiShoppingBag2Fill
-            className="icons icon-bag"
-            onClick={handleShowCart}
-          />
+          <div className="bagContainer">
+            <RiShoppingBag2Fill
+              className="icons icon-bag"
+              onClick={handleShowCart}
+            />
+            {cartList.length > 0 && (
+              <div className="numberOfCart">{cartList.length}</div>
+            )}
+          </div>
         </div>
         {dropDrawProduct && (
           <ProductsDraw setDropDrawProduct={setDropDrawProduct} />
