@@ -4,7 +4,7 @@ export const CardCartContainer = styled.div`
   display: flex;
   height: 100px;
   flex-direction: row;
-  border: 1px solid green;
+  background-color: white;
   position: relative;
   padding-right: 10px;
 
@@ -16,6 +16,7 @@ export const CardCartContainer = styled.div`
     align-items: center;
     img {
       width: 100px;
+      height: 66px;
     }
   }
 
@@ -26,11 +27,31 @@ export const CardCartContainer = styled.div`
     justify-content: space-between;
     padding: 10px;
 
+    h1 {
+      font-size: 15px;
+      color: gray;
+    }
+
     .quantity {
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+      padding: 3px;
+      width: 80px;
+      margin: 0 auto;
+      background-color: var(--color-secondary);
+      span {
+        width: 30px;
+        text-align: center;
+        background-color: white;
+      }
+      button {
+        border: none;
+        background-color: var(--color-secondary);
+        color: white;
+        font-weight: bold;
+      }
     }
   }
   .delete {

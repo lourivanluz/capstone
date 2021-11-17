@@ -12,7 +12,11 @@ export const CardCart = ({ item }) => {
         <img src={item.img} alt={"product image"} />
       </div>
       <div className="info">
-        <div>{item.title}</div>
+        <h1>
+          {item.title.length > 20
+            ? item.title.slice(0, 17).concat("...")
+            : item.title}
+        </h1>
 
         <div>{`Preço: ${item.price}`}</div>
         <div className="quantity">
