@@ -18,6 +18,7 @@ export const CartContainer = styled.div`
     background-color: var(--color-primary);
     color: white;
     font-weight: bold;
+    cursor: pointer;
   }
 
   ul {
@@ -31,6 +32,21 @@ export const CartContainer = styled.div`
     position: absolute;
     bottom: 0;
     background-color: white;
+  }
+  .bagEmpty {
+    padding: 15px;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: gray;
+    .iconBag {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
   }
 `;
 
