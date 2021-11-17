@@ -3,6 +3,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { useUser } from "../../Providers/User";
+import FlexButton from "../FlexButton";
 
 const SignUpForm = () => {
   const schema = yup.object().shape({
@@ -73,7 +74,7 @@ const SignUpForm = () => {
 
       <input placeholder="Complemento" {...register("complement")} />
 
-      <button type="submit">Tudo Pronto</button>
+      <FlexButton type="submit">Tudo Pronto</FlexButton>
     </form>
   );
 };
