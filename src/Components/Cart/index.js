@@ -75,7 +75,7 @@ export const Cart = ({ show }) => {
               <span>{`R$ ${priceForSubscribe.toFixed(2)}`}</span>
             </PriceSubscribe>
             <br />
-            <button onClick={handleBuy}>Finalizar compra</button>
+            <FlexButton onClick={handleBuy}>Finalizar compra</FlexButton>
           </div>
         </div>
       )}

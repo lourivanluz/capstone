@@ -3,10 +3,11 @@ import styled from "styled-components";
 export const FormWrapper = styled.div`
   display: flex;
   height: 900px;
+  min-height: calc(100vh - 50px);
   width: 80vw;
   max-width: 400px;
   margin: 0 auto;
-  padding: 7em 0 4em 0;
+  padding: 4.5em 0 4em 0;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
