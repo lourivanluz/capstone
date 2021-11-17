@@ -25,7 +25,7 @@ const EditForm = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  const { editAccount } = useUser();
+  const { user, editAccount } = useUser();
 
   return (
     <form onSubmit={handleSubmit(editAccount)}>
@@ -33,56 +33,58 @@ const EditForm = () => {
         <h1>Editar Conta</h1>
 
         <TextField
-          label={errors.name ? errors.name.message : "Nome"}
+          label={errors.name ? errors.name.message : user.name}
           fullWidth
           variant="standard"
           {...register("name")}
         />
 
         <TextField
-          label={errors.email ? errors.email.message : "E-mail"}
+          label={errors.email ? errors.email.message : user.email}
           fullWidth
           variant="standard"
           {...register("email")}
         />
 
         <TextField
-          label={errors.phone ? errors.phone.message : "Telefone"}
+          label={errors.phone ? errors.phone.message : user.phone}
           fullWidth
           variant="standard"
           {...register("phone")}
         />
 
         <TextField
-          label={errors.cep ? errors.cep.message : "CEP"}
+          label={errors.cep ? errors.cep.message : user.cep}
           fullWidth
           variant="standard"
           {...register("cep")}
         />
 
         <TextField
-          label={errors.address ? errors.address.message : "Endereço"}
+          label={errors.address ? errors.address.message : user.address}
           fullWidth
           variant="standard"
           {...register("address")}
         />
 
         <TextField
-          label={errors.area ? errors.area.message : "Bairro"}
+          label={errors.area ? errors.area.message : user.area}
           fullWidth
           variant="standard"
           {...register("area")}
         />
 
         <TextField
-          label={errors.number ? errors.number.message : "Número"}
+          label={errors.number ? errors.number.message : user.number}
           fullWidth
           variant="standard"
           {...register("number")}
         />
 
         <TextField
-          label={errors.complement ? errors.complement.message : "Complemento"}
+          label={
+            errors.complement ? errors.complement.message : user.complement
+          }
           fullWidth
           variant="standard"
           {...register("complement")}

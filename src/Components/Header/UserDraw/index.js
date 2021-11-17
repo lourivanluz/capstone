@@ -22,9 +22,9 @@ export const UserDraw = ({ setShowUserDrop }) => {
     <UserDrawContainer>
       {!accessToken ? (
         <div className="formContainer">
-          <p>Entrar:</p>
+          <p className="loginP">Entrar:</p>
           <LoginForm />
-          <p>
+          <p className="registerP">
             ou{" "}
             <span className="linkRegister" onClick={handleRegister}>
               Cadastre-se
