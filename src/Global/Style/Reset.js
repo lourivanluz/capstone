@@ -56,6 +56,8 @@ a{
 --font-primary:'Inter', sans-serif;
 --fontColor-primary:rgb(128, 128, 128);
 --color-primary:rgb(250, 2, 60);
+--color-secondary:#42a5f5;
+--color-focus:#019C98;
 
 }
 `;

@@ -8,7 +8,9 @@ const CarouselBoxes = ({ products }) => {
       <ContainerUl>
         {!products[0]
           ? null
-          : products.map((product) => <CardBox product={product} />)}
+          : products.map((product) => (
+              <CardBox key={product.id} product={product} />
+            ))}
       </ContainerUl>
     </Container>
   );

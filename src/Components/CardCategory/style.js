@@ -13,6 +13,12 @@ export const CardCategoryContainer = styled.li`
     transform: translate(-1px, -1px);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
   }
+  @media (min-width: 790px) {
+    height: 280px;
+    width: 200px;
+    min-width: 200px;
+    background-size: 249px 279px;
+  }
 `;
 
 export const CardCategoryContent = styled.div`
@@ -29,8 +35,13 @@ export const CardCategoryContent = styled.div`
     font-variant: small-caps;
     text-align: center;
     font-size: 20px;
-    color: #5f9ea0;
+    color: var(--fontColor-primary);
     text-shadow: -0.5px -0.5px 0px #fff, -0.5px 1px 0px #fff,
       1px -0.5px 0px #fff, 1px 0px 0px #fff;
+  }
+  @media (min-width: 790px) {
+    width: 200px;
+    min-width: 200px;
+    height: 279px;
   }
 `;
