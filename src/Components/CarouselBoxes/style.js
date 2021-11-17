@@ -17,7 +17,7 @@ export const ContainerUl = styled.ul`
   width: 100%;
   padding: 2px;
   height: 280px;
-  scrollbar-color: #00cd66 #e0eee0;
+  scrollbar-color: var(--color-secondary) var(--fontColor-primary);
   scrollbar-width: thin;
   ::-webkit-scrollbar {
     width: 5px;

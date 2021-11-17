@@ -1,50 +1,39 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  background-color: var(--color-primary);
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const FormContent = styled.div`
-  width: 100%;
-  background-color: #bebebe;
-  color: #000;
-  text-align: center;
-  padding: 10px;
-  form {
-    margin: 0 auto;
-  }
-  h1 {
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-weight: bold;
-  }
 `;
 
 export const AboutContent = styled.div`
-  background-color: #000;
-  width: 100%;
-  color: #fff;
   display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 10px;
+  flex-direction: column;
+  width: 1024px;
+  max-width: 90vw;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 2rem 0;
+  color: #fff;
   div {
-    width: 50%;
-    text-align: center;
-    padding-top: 10px;
+    width: 90%;
+    text-align: left;
     p {
+      font-size: 16px;
       text-align: left;
-      padding-left: 20px;
     }
-    h1 {
-      margin-bottom: 10px;
-      font-size: 18px;
+    h3 {
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+      font-size: 22px;
       font-weight: bold;
+    }
+  }
+
+  @media (min-width: 824px) {
+    flex-direction: row;
+
+    div {
+      width: 40%;
     }
   }
 `;

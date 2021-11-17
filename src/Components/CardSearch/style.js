@@ -7,8 +7,9 @@ export const CardSearchContainer = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid var(--fontColor-primary);
   margin: 0 auto;
+  color: var(--fontColor-primary);
   img {
     width: 100px;
     height: 80px;

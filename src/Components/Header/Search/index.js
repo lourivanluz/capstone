@@ -1,8 +1,9 @@
 import { SearchContainer } from "./style";
-import { ImSearch } from "react-icons/im";
+import { IoMdClose } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { useProducts } from "../../../Providers/Products";
 import CardSearch from "../../CardSearch";
+import { TextField } from "./style";
 
 export const Search = ({ setShowSearch }) => {
   const [userInput, setUserInput] = useState("");
@@ -15,13 +16,16 @@ export const Search = ({ setShowSearch }) => {
   return (
     <SearchContainer>
       <div className="inputsContainer">
-        <input
+        <TextField
           type="text"
           value={userInput}
+          size="small"
+          variant="standard"
+          placeholder="fome do que?"
           onChange={(e) => setUserInput(e.target.value)}
         />
         <button className="closeSearch" onClick={() => setShowSearch(false)}>
-          x
+          <IoMdClose />
         </button>
       </div>
 
