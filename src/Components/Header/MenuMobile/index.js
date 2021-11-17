@@ -13,26 +13,29 @@ export const MenuMobile = ({ show, setShowMenu }) => {
   return (
     <MenuContainer show={show}>
       <div>
-        <p>Categorias</p>
-        <ul>
-          {categoryFiltred.map((item, index) => (
-            <li key={index} onClick={() => setShowMenu(false)}>
-              <Link to={`/products/filter/${item.category}`}>
-                {item.category}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <p>Nossas Boxs</p>
-        <ul>
-          {boxList?.map((item, index) => (
-            <li key={index} onClick={() => setShowMenu(false)}>
-              <Link to={`/boxDeteil/${item.id}`}>{item.title}</Link>
-            </li>
-          ))}
-        </ul>
+        <div className="headerMenu">humm inham!</div>
+        <div className="listMenu">
+          <p>Categorias</p>
+          <ul>
+            {categoryFiltred.map((item, index) => (
+              <li key={index} onClick={() => setShowMenu(false)}>
+                <Link to={`/products/filter/${item.category}`}>
+                  {item.category}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div>
+            <p>Nossas Boxs</p>
+            <ul>
+              {boxList?.map((item, index) => (
+                <li key={index} onClick={() => setShowMenu(false)}>
+                  <Link to={`/boxDeteil/${item.id}`}>{item.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
       <button onClick={() => setShowMenu(false)}>x</button>
     </MenuContainer>
