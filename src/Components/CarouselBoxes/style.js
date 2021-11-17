@@ -21,6 +21,7 @@ export const ContainerUl = styled.ul`
   scrollbar-width: thin;
   ::-webkit-scrollbar {
     width: 5px;
+    height: 7px;
   }
   ::-webkit-scrollbar-track {
     background: #5f9ea0;
