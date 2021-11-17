@@ -1,6 +1,7 @@
 import { ModalContent, ModalShadow } from "./style";
 import { useUser } from "../../Providers/User";
 import { useCart } from "../../Providers/Cart";
+import FlexButton from "../FlexButton";
 
 const ConfirmModal = ({ haveBox, setShowModal }) => {
   const { user, subscribeAccount } = useUser();
@@ -28,19 +29,21 @@ const ConfirmModal = ({ haveBox, setShowModal }) => {
     <ModalShadow>
       <ModalContent>
         <h3>Confirmação de compra</h3>
-        <div classNam="container">
-          {haveBox && <p>{"Você está prestes a se tornar um assinante"}</p>}
-          <p>{"Para finalizar a compra confirme os dados de envio"}</p>
-          <span>{`Nome: ${user.name}`}</span>
-          <span>{`E-mail: ${user.email}`}</span>
-          <span>{`Endereço: ${user.address}`}</span>
-          <span>{`Bairro: ${user.area}`}</span>
-          <span>{`Cep: ${user.cep}`}</span>
-          <span>{`Complemento: ${user.complement}`}</span>
+        <div className="container">
+          <div className="headerModal">
+            {haveBox && <p>{"Você está prestes a se tornar um assinante"}</p>}
+            <p>{"Para finalizar a compra confirme os dados de envio"}</p>
+          </div>
+          <p>{`Nome: ${user?.name}`}</p>
+          <p>{`E-mail: ${user?.email}`}</p>
+          <p>{`Endereço: ${user?.address}`}</p>
+          <p>{`Bairro: ${user?.area}`}</p>
+          <p>{`Cep: ${user?.cep}`}</p>
+          <p>{`Complemento: ${user?.complement}`}</p>
         </div>
-        <div>
-          <button onClick={() => handleCancel()}>Cancelar</button>
-          <button onClick={() => handlePurchase()}>Confirmar</button>
+        <div className="buttonsContainer">
+          <FlexButton onClick={() => handleCancel()}>Cancelar</FlexButton>
+          <FlexButton onClick={() => handlePurchase()}>Confirmar</FlexButton>
         </div>
       </ModalContent>
     </ModalShadow>

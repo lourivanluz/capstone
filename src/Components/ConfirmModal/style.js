@@ -37,8 +37,23 @@ export const ModalContent = styled.div`
     color: white;
     border-radius: 8px 8px 0 0;
   }
+  .headerModal {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
 
   .container {
-    width: 400px;
+    width: 80vw;
+    max-width: 600px;
+    padding: 15px;
+  }
+  .buttonsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    button {
+      width: 40%;
+    }
   }
 `;

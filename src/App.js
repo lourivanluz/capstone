@@ -6,7 +6,6 @@ import { Routers } from "./Routes";
 function App() {
   return (
     <div>
-      <ConfirmModal />
       <Header />
       <Routers />
       <Footer />
