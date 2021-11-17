@@ -49,7 +49,7 @@ export const Cart = ({ show }) => {
       </div>
       {cartList.length === 0 ? (
         <div className="bagEmpty">
-          <RiShoppingBag2Fill />
+          <RiShoppingBag2Fill className="iconBag" />
           <span>Clique em “adicionar” para adicionar produtos na sacola</span>
         </div>
       ) : (

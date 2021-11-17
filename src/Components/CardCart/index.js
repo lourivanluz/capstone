@@ -1,4 +1,5 @@
 import { useCart } from "../../Providers/Cart";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 import { CardCartContainer } from "./style";
 
 export const CardCart = ({ item }) => {
@@ -26,7 +27,7 @@ export const CardCart = ({ item }) => {
         </div>
       </div>
       <button className="delete" onClick={() => rmvAllIDProducts(item.id)}>
-        X
+        x
       </button>
     </CardCartContainer>
   );

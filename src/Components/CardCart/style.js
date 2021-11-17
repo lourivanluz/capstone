@@ -56,9 +56,12 @@ export const CardCartContainer = styled.div`
   }
   .delete {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 3px;
+    top: 3px;
     border-radius: 50%;
-    border: none;
+    border: 1px solid black;
+    font-style: 20px;
+    width: 20px;
+    height: 20px;
   }
 `;
