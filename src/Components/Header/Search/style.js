@@ -6,7 +6,7 @@ export const SearchContainer = styled.div`
   max-width: 1044px;
   height: 100vh;
   background-color: yellow;
-  top: 0;
+  top: 50px;
   left: 0;
   overflow-y: auto;
   .inputsContainer {

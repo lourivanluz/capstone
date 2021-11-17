@@ -9,4 +9,5 @@ export const CartContainer = styled.div`
   border: 1px solid red;
   transition: right 0.3s linear;
   background-color: white;
+  z-index: 30;
 `;

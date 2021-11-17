@@ -3,6 +3,9 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { useUser } from "../../Providers/User";
+import FlexButton from "../FlexButton";
+import { FormWrapper } from "./style";
+import { TextField } from "@mui/material";
 
 const SignUpForm = () => {
   const schema = yup.object().shape({
@@ -36,44 +39,86 @@ const SignUpForm = () => {
   const { createAccount } = useUser();
 
   return (
-    <form
-      onSubmit={handleSubmit(createAccount)}
-      style={{ display: "flex", flexDirection: "column", width: "300px" }}
-    >
-      {!!errors.name && <span>{errors.name.message}</span>}
-      <input placeholder="Nome" {...register("name")} />
+    <form onSubmit={handleSubmit(createAccount)}>
+      <FormWrapper>
+        <h1>Criar Conta</h1>
 
-      {!!errors.email && <span>{errors.email.message}</span>}
-      <input placeholder="E-mail" {...register("email")} />
+        <TextField
+          label={errors.name ? errors.name.message : "Nome"}
+          fullWidth
+          variant="standard"
+          {...register("name")}
+        />
 
-      {!!errors.phone && <span>{errors.phone.message}</span>}
-      <input placeholder="Telefone" {...register("phone")} />
+        <TextField
+          label={errors.email ? errors.email.message : "E-mail"}
+          fullWidth
+          variant="standard"
+          {...register("email")}
+        />
 
-      {!!errors.password && <span>{errors.password.message}</span>}
-      <input type="password" placeholder="Senha" {...register("password")} />
+        <TextField
+          label={errors.phone ? errors.phone.message : "Telefone"}
+          fullWidth
+          variant="standard"
+          {...register("phone")}
+        />
 
-      {!!errors.passconf && <span>{errors.passconf.message}</span>}
-      <input
-        type="password"
-        placeholder="Confirmação de senha"
-        {...register("passconf")}
-      />
+        <TextField
+          label={errors.password ? errors.password.message : "Senha"}
+          fullWidth
+          variant="standard"
+          type="password"
+          {...register("password")}
+        />
 
-      {!!errors.cep && <span>{errors.cep.message}</span>}
-      <input placeholder="CEP" {...register("cep")} />
+        <TextField
+          label={
+            errors.passconf ? errors.passconf.message : "Confirmação de senha"
+          }
+          fullWidth
+          variant="standard"
+          type="password"
+          {...register("passconf")}
+        />
 
-      {!!errors.address && <span>{errors.address.message}</span>}
-      <input placeholder="Endereço" {...register("address")} />
+        <TextField
+          label={errors.cep ? errors.cep.message : "CEP"}
+          fullWidth
+          variant="standard"
+          {...register("cep")}
+        />
 
-      {!!errors.area && <span>{errors.area.message}</span>}
-      <input placeholder="Bairro" {...register("area")} />
+        <TextField
+          label={errors.address ? errors.address.message : "Endereço"}
+          fullWidth
+          variant="standard"
+          {...register("address")}
+        />
 
-      {!!errors.number && <span>{errors.number.message}</span>}
-      <input placeholder="Número" {...register("number")} />
+        <TextField
+          label={errors.area ? errors.area.message : "Bairro"}
+          fullWidth
+          variant="standard"
+          {...register("area")}
+        />
 
-      <input placeholder="Complemento" {...register("complement")} />
+        <TextField
+          label={errors.number ? errors.number.message : "Número"}
+          fullWidth
+          variant="standard"
+          {...register("number")}
+        />
 
-      <button type="submit">Tudo Pronto</button>
+        <TextField
+          label={errors.complement ? errors.complement.message : "Complemento"}
+          fullWidth
+          variant="standard"
+          {...register("complement")}
+        />
+
+        <FlexButton type="submit">Tudo Pronto</FlexButton>
+      </FormWrapper>
     </form>
   );
 };
