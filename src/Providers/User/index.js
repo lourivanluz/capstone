@@ -82,7 +82,7 @@ export const UserProvider = ({ children }) => {
         headers: { Authorization: `Bearer ${data.accessToken}` },
       })
       .then((response) => {
-        setData({ accessToken: data.accessToken, response });
+        setData({ accessToken: data.accessToken, user: response.data });
       })
       .catch((_) => console.log("Desculpe, algo deu errado"));
   };
@@ -95,7 +95,7 @@ export const UserProvider = ({ children }) => {
         headers: { Authorization: `Bearer ${data.accessToken}` },
       })
       .then((response) => {
-        setData({ accessToken: data.accessToken, response });
+        setData({ accessToken: data.accessToken, user: response.data });
         localStorage.setItem("@BHealthy: user", JSON.stringify(response.data));
       })
       .catch((_) => console.log("Desculpe, algo deu errado"));
