@@ -27,7 +27,7 @@ export const Cart = ({ show }) => {
 
   const handleBuy = () => {
     console.log(haveBox);
-    if (localStorage.getItem("@BHealthy: user")) {
+    if (localStorage.getItem("@Inham: user")) {
       setShowModal(true);
     } else {
       history.push("/register");
