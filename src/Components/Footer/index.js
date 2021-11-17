@@ -1,15 +1,12 @@
 import FooterForm from "../FooterForm";
-import { AboutContent, Container, FormContent } from "./style";
+import { AboutContent, Container } from "./style";
 import { FaGithub } from "react-icons/fa";
 import { Link } from "@mui/material";
 
 const Footer = () => {
   return (
     <Container>
-      <FormContent>
-        <h1>Fale conosco</h1>
-        <FooterForm />
-      </FormContent>
+      <FooterForm />
       <AboutContent>
         <div>
           <h1>Sobre</h1>
