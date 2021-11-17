@@ -9,11 +9,13 @@ export const BoxCardContainer = styled.li`
   justify-content: space-around;
   align-items: center;
   padding: 10px;
-  border: 1px solid #000;
+  border: 1px solid #eee9e9;
+  border-radius: 5px;
+  color: var(--fontColor-primary);
   transition: transform 0.75s;
   img {
     width: 250px;
-    height: 200px;
+    height: 180px;
     border-radius: 5px;
     margin-bottom: 5px;
     cursor: pointer;

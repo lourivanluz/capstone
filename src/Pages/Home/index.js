@@ -25,36 +25,28 @@ export const Home = () => {
   return (
     <PageBase>
       <Banner />
-      <div style={{ backgroundColor: "red" }}>
-        <h1>Carnes:</h1>
+      <div>
         <CarouselProducts products={meatList} />
       </div>
-      <div style={{ backgroundColor: "red" }}>
-        <h1>Boxes:</h1>
+      <div>
         <CarouselBoxes products={boxList} />
       </div>
-      <div style={{ backgroundColor: "red" }}>
-        <h1>Frangos:</h1>
+      <div>
         <CarouselProducts products={chickenList} />
       </div>
-      <div style={{ backgroundColor: "red" }}>
-        <h1>Vegetarianos:</h1>
+      <div>
         <CarouselProducts products={vegList} />
       </div>
-      <div style={{ backgroundColor: "red" }}>
-        <h1>Peixes e frutos do mar:</h1>
+      <div>
         <CarouselProducts products={fishList} />
       </div>
-      <div style={{ backgroundColor: "red" }}>
-        <h1>Snacks:</h1>
+      <div>
         <CarouselProducts products={snacksList} />
       </div>
-      <div style={{ backgroundColor: "red" }}>
-        <h1>Pães:</h1>
+      <div>
         <CarouselProducts products={breadsList} />
       </div>
-      <div style={{ backgroundColor: "red" }}>
-        <h1>Sopas e cremes:</h1>
+      <div>
         <CarouselProducts products={soupsList} />
       </div>
     </PageBase>

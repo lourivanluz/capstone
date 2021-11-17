@@ -58,5 +58,6 @@ a{
 --color-primary:rgb(250, 2, 60);
 --color-secondary:#42a5f5;
 --color-focus:#019C98;
+
 }
 `;
