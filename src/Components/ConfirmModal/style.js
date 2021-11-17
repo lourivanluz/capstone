@@ -15,13 +15,45 @@ export const ModalShadow = styled.div`
 `;
 
 export const ModalContent = styled.div`
-  display: flex;
+  /* display: flex;
   width: 95vw;
   max-width: 380px;
   align-items: center;
   text-align: center;
   flex-direction: column;
+    padding: 16px;
+  */
   background-color: white;
-  border-radius: 16px;
-  padding: 16px;
+  border-radius: 8px;
+
+  h3 {
+    background-color: var(--color-primary);
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    border-radius: 8px 8px 0 0;
+  }
+  .headerModal {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .container {
+    width: 80vw;
+    max-width: 600px;
+    padding: 15px;
+  }
+  .buttonsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    button {
+      width: 40%;
+    }
+  }
 `;

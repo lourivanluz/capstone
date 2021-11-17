@@ -1,4 +1,5 @@
 import { useCart } from "../../Providers/Cart";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 import { CardCartContainer } from "./style";
 
 export const CardCart = ({ item }) => {
@@ -12,7 +13,11 @@ export const CardCart = ({ item }) => {
         <img src={item.img} alt={"product image"} />
       </div>
       <div className="info">
-        <div>{item.title}</div>
+        <h1>
+          {item.title.length > 20
+            ? item.title.slice(0, 17).concat("...")
+            : item.title}
+        </h1>
 
         <div>{`Preço: ${item.price}`}</div>
         <div className="quantity">
@@ -22,7 +27,7 @@ export const CardCart = ({ item }) => {
         </div>
       </div>
       <button className="delete" onClick={() => rmvAllIDProducts(item.id)}>
-        X
+        x
       </button>
     </CardCartContainer>
   );

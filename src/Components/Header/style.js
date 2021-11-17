@@ -7,8 +7,9 @@ export const HeaderContainer = styled.header`
   display: flex;
   justify-content: center;
   z-index: 30;
+  box-sizing: border-box;
   border-bottom: 1px solid lightgrey;
-  position: fixed;
+  position: sticky;
   top: 0;
 
   .header {

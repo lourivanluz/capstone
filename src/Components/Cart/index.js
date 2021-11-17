@@ -1,14 +1,17 @@
 import { IoIosArrowForward } from "react-icons/io";
 import { RiShoppingBag2Fill } from "react-icons/ri";
-import { CartContainer } from "./style";
+import { CartContainer, Price, PriceSubscribe } from "./style";
 import { useCart } from "../../Providers/Cart";
 import { CardCart } from "../CardCart";
 import { useHistory } from "react-router-dom";
 import ConfirmModal from "../ConfirmModal";
 import { useState } from "react";
+import FlexButton from "../FlexButton";
+import { useUser } from "../../Providers/User";
 
 export const Cart = ({ show }) => {
   const { cartList, setShowCart } = useCart();
+  const { user } = useUser();
 
   const [haveBox] = cartList.filter((item) => item.category === "boxs");
   const [showModal, setShowModal] = useState(false);
@@ -41,12 +44,12 @@ export const Cart = ({ show }) => {
 
   return (
     <CartContainer show={show}>
-      <div onClick={handleShowCart}>
+      <div onClick={handleShowCart} className="headerBag">
         <IoIosArrowForward /> Minha Sacola
       </div>
       {cartList.length === 0 ? (
         <div className="bagEmpty">
-          <RiShoppingBag2Fill />
+          <RiShoppingBag2Fill className="iconBag" />
           <span>Clique em “adicionar” para adicionar produtos na sacola</span>
         </div>
       ) : (
@@ -58,15 +61,22 @@ export const Cart = ({ show }) => {
               </li>
             ))}
           </ul>
-          <span>previsão de entrega: 21/11</span>
-          <br />
-          {/* usar o user.subscribe como parametro pra riscar um dos dois preços no styled componente */}
-          <span>{`Subtotal: R$ ${totalPrice.toFixed(2)}`}</span> <br />
-          <span>{`Total para assinantes: R$ ${priceForSubscribe.toFixed(
-            2
-          )}`}</span>
-          <br />
-          <button onClick={handleBuy}>Finalizar compra</button>
+          <div className="priceInfo">
+            <span>Previsão de entrega: 21/11</span>
+            <br />
+            {/* usar o user.subscribe como parametro pra riscar um dos dois preços no styled componente */}
+            <Price user={user}>
+              {`Subtotal:`}
+              <span>{` R$${totalPrice.toFixed(2)}`}</span>
+            </Price>
+            <br />
+            <PriceSubscribe user={user}>
+              {`Total para assinantes:`}
+              <span>{`R$ ${priceForSubscribe.toFixed(2)}`}</span>
+            </PriceSubscribe>
+            <br />
+            <button onClick={handleBuy}>Finalizar compra</button>
+          </div>
         </div>
       )}
       {showModal && (
