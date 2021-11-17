@@ -76,12 +76,15 @@ export const ProductWrapper = styled.div`
     }
 
     div {
-      width: 100%;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-right: 0;
     }
 
     button {
       width: 45%;
-      min-width: 300px;
+      min-width: 280px;
     }
   }
 `;
