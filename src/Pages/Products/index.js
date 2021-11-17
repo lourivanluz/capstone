@@ -1,9 +1,13 @@
+import { PageBase } from "../../Components/PageBase";
 import { ProductFiltred } from "../../Components/ProductsFiltred";
+import { Container } from "./style";
 
 export const Products = () => {
   return (
-    <div>
-      <ProductFiltred />
-    </div>
+    <PageBase>
+      <Container>
+        <ProductFiltred />
+      </Container>
+    </PageBase>
   );
 };
