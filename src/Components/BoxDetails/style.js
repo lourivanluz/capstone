@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ProductWrapper = styled.div`
   display: flex;
-  padding-top: 6rem;
+  padding-top: 3.5rem;
   flex-flow: row wrap;
   width: 1024px;
   max-width: 95vw;
