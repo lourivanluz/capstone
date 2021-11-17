@@ -4,6 +4,7 @@ import { Container, ContainerUl } from "./style";
 const CarouselBoxes = ({ products }) => {
   return (
     <Container>
+      <h2>boxes</h2>
       <ContainerUl>
         {!products[0]
           ? null

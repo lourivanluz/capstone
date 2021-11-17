@@ -2,8 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 90%;
-  max-width: 755px;
-  margin: 0 auto;
+  max-width: 620px;
+  margin: 15px auto;
+  h2 {
+    font-variant: small-caps;
+    font-weight: bold;
+    color: #5f9ea0;
+  }
 `;
 
 export const ContainerUl = styled.ul`
@@ -11,14 +16,14 @@ export const ContainerUl = styled.ul`
   overflow-x: scroll;
   width: 100%;
   padding: 2px;
-  height: 280px;
+  height: 230px;
   scrollbar-color: #00cd66 #e0eee0;
   scrollbar-width: thin;
   ::-webkit-scrollbar {
     width: 5px;
   }
   ::-webkit-scrollbar-track {
-    background: red;
+    background: #5f9ea0;
   }
   ::-webkit-scrollbar-thumb {
     background-color: #00cd66;

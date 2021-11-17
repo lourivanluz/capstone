@@ -2,8 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 90%;
-  max-width: 755px;
+  max-width: 620px;
   margin: 0 auto;
+  h2 {
+    font-variant: small-caps;
+    font-weight: bold;
+    color: #5f9ea0;
+  }
 `;
 
 export const ContainerUl = styled.ul`
@@ -18,7 +23,7 @@ export const ContainerUl = styled.ul`
     width: 5px;
   }
   ::-webkit-scrollbar-track {
-    background: red;
+    background: #5f9ea0;
   }
   ::-webkit-scrollbar-thumb {
     background-color: #00cd66;

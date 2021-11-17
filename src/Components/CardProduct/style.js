@@ -3,13 +3,15 @@ import styled from "styled-components";
 export const ProductCardContainer = styled.li`
   width: 150px;
   min-width: 150px;
-  height: 260px;
+  height: 210px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   padding: 10px;
-  border: 1px solid #000;
+  border: 1px solid #eee9e9;
+  border-radius: 5px;
+  color: #5f9ea0;
   transition: transform 0.75s;
   img {
     width: 130px;
@@ -22,6 +24,9 @@ export const ProductCardContainer = styled.li`
     flex-direction: row;
     width: 90%;
     justify-content: space-between;
+  }
+  .subscribe {
+    color: #3cb371;
   }
   p {
     font-size: 12px;
