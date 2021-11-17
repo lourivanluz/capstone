@@ -11,8 +11,6 @@ const ConfirmModal = ({ haveBox, setShowModal }) => {
   };
 
   const handlePurchase = () => {
-    console.log(!!haveBox);
-    console.log(user);
     if (haveBox) {
       subscribeAccount();
       clearCart();
@@ -30,11 +28,16 @@ const ConfirmModal = ({ haveBox, setShowModal }) => {
     <ModalShadow>
       <ModalContent>
         <h3>Confirmação de compra</h3>
-        <p>
-          {haveBox
-            ? "Você se tornará assinante e texto texto texto texto texto texto texto texto texto texto"
-            : "Um e-mail será enviado e texto texto texto texto texto texto texto texto texto texto"}
-        </p>
+        <div classNam="container">
+          {haveBox && <p>{"Você está prestes a se tornar um assinante"}</p>}
+          <p>{"Para finalizar a compra confirme os dados de envio"}</p>
+          <span>{`Nome: ${user.name}`}</span>
+          <span>{`E-mail: ${user.email}`}</span>
+          <span>{`Endereço: ${user.address}`}</span>
+          <span>{`Bairro: ${user.area}`}</span>
+          <span>{`Cep: ${user.cep}`}</span>
+          <span>{`Complemento: ${user.complement}`}</span>
+        </div>
         <div>
           <button onClick={() => handleCancel()}>Cancelar</button>
           <button onClick={() => handlePurchase()}>Confirmar</button>
