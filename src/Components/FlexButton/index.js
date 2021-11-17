@@ -3,8 +3,8 @@ import { StyledButton } from "./style";
 const FlexButton = ({
   width = "100%",
   font = "16px",
-  colors = ["#019C98", "white"],
-  hover = ["#42a5f5", "white"],
+  colors = ["#42a5f5", "white"],
+  hover = ["#019C98", "white"],
   children,
 }) => {
   return (
