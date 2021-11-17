@@ -3,6 +3,8 @@ import { useParams } from "react-router";
 import { useCart } from "../../Providers/Cart";
 
 import api from "../../Services";
+import FlexButton from "../FlexButton";
+import { ProductWrapper } from "./style";
 
 const BoxDetails = () => {
   const [box, setBox] = useState({});
@@ -20,16 +22,18 @@ const BoxDetails = () => {
   }, [id]);
 
   return (
-    <div>
-      <img src={box.img} alt={box.title} style={{ width: "420px" }} />
+    <ProductWrapper>
+      <img src={box.img} alt={box.title} />
       <div>
         <h1>{box.title}</h1>
-        <p>{box.price}</p>
-        <button onClick={() => addToCart(box)}>Adicionar</button>
+        <h3>{box.price} /mês</h3>
+        <FlexButton width="65%" onClick={() => addToCart(box)}>
+          Adicionar
+        </FlexButton>
       </div>
       <div>
         <h2> {box.weight} </h2>
-        <span>Em ingredientes</span>
+        <h4>Em ingredientes</h4>
         <p> {box.description} </p>
       </div>
       <div>
@@ -37,7 +41,7 @@ const BoxDetails = () => {
         {box.contents &&
           box.contents.map((item, index) => <p key={index}>{item}</p>)}
       </div>
-    </div>
+    </ProductWrapper>
   );
 };
 
