@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const CardCategoryContainer = styled.li`
   width: 150px;
   min-width: 150px;
-  height: 210px;
+  height: 230px;
   border: 1px solid #eee9e9;
   border-radius: 5px;
   transition: transform 0.75s;
   background-image: url(${(props) => props.imageBackground});
-  background-size: 149px 209px;
+  background-size: 149px 229px;
   :hover {
     transform: translate(-1px, -1px);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
@@ -24,7 +24,7 @@ export const CardCategoryContainer = styled.li`
 export const CardCategoryContent = styled.div`
   width: 149px;
   min-width: 149px;
-  height: 209px;
+  height: 229px;
   background-color: rgba(253, 245, 230, 0.4);
   display: flex;
   flex-direction: column;

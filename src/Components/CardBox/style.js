@@ -15,7 +15,7 @@ export const BoxCardContainer = styled.li`
   transition: transform 0.75s;
   img {
     width: 250px;
-    height: 180px;
+    height: 150px;
     border-radius: 5px;
     margin-bottom: 5px;
     cursor: pointer;
@@ -46,6 +46,8 @@ export const BoxCardContainer = styled.li`
     font-size: 12px;
   }
   button {
+    padding: 2px;
+    height: 30px;
     margin-top: 10px;
   }
   :hover {
