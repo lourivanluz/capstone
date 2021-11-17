@@ -2,12 +2,14 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
   height: 50px;
-  width: 100vw;
+  width: 100%;
   background-color: white;
   display: flex;
   justify-content: center;
   z-index: 30;
   border-bottom: 1px solid lightgrey;
+  position: fixed;
+  top: 0;
 
   .header {
     width: 100%;
@@ -51,6 +53,24 @@ export const HeaderContainer = styled.header`
           }
         }
       }
+    }
+    .iconsContainer {
+      display: flex;
+    }
+    .bagContainer {
+      position: relative;
+    }
+    .numberOfCart {
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      position: absolute;
+      top: -4px;
+      right: -2px;
+      font-size: 15px;
+      text-align: center;
+      border-radius: 50%;
+      color: white;
     }
     .icons {
       height: 20px;
