@@ -26,6 +26,8 @@ const LoginForm = () => {
         size="small"
         margin="dense"
         placeholder="Email"
+        error={!!errors.email}
+        helperText={errors.email?.message}
         {...register("email")}
       />
       <TextField
@@ -33,6 +35,8 @@ const LoginForm = () => {
         size="small"
         margin="dense"
         placeholder="Senha"
+        error={!!errors.password}
+        helperText={errors.password?.message}
         type="password"
         {...register("password")}
       />
