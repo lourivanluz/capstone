@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const PageBaseStyle = styled.div`
-  width: 100vw;
+  width: 100%;
   max-width: 1024px;
   padding: 0 10px;
   min-height: 100vh;

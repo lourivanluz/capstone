@@ -20,9 +20,8 @@ const DetailsAccordion = () => {
           Como é feita a cobrança?
         </AccordionSummary>
         <AccordionDetails>
-          Por e-mail e pa texto texto texto texto texto texto texto texto texto
-          texto texto texto texto texto texto texto texto texto texto texto
-          texto texto texto texto texto texto texto texto texto texto texto
+          Você escolhe a melhor forma de pagar e tudo ficará encargo da empreza
+          parceira Paypal que ira garantir todo o auxilio que precisar.
         </AccordionDetails>
       </Accordion>
 
@@ -39,9 +38,8 @@ const DetailsAccordion = () => {
           Posso trocar de box quando quiser?
         </AccordionSummary>
         <AccordionDetails>
-          Mas é claro texto texto texto texto texto texto texto texto texto
-          texto texto texto texto texto texto texto texto texto texto texto
-          texto texto texto texto texto texto texto texto texto texto texto
+          Mas é claro, poderá mudar a qualquer momento, Basta nos enviar um
+          email e sua próxima box já sera do seu gosto.
         </AccordionDetails>
       </Accordion>
 
@@ -58,9 +56,8 @@ const DetailsAccordion = () => {
           Tem cobrança de frete?
         </AccordionSummary>
         <AccordionDetails>
-          Nope texto texto texto texto texto texto texto texto texto texto texto
-          texto texto texto texto texto texto texto texto texto texto texto
-          texto texto texto texto texto texto texto texto texto texto texto
+          Para compras acima de 400 Reais não será cobrado frete, Ah! e Filiado
+          também não paga frete.
         </AccordionDetails>
       </Accordion>
 
@@ -77,9 +74,8 @@ const DetailsAccordion = () => {
           E se eu não gostar do que recebi?
         </AccordionSummary>
         <AccordionDetails>
-          AZAR texto texto texto texto texto texto texto texto texto texto texto
-          texto texto texto texto texto texto texto texto texto texto texto
-          texto texto texto texto texto texto texto texto texto texto texto
+          Nossa equipe esta pronta para receber seu feedback, nos avalie e
+          faremos o nosso melhor!
         </AccordionDetails>
       </Accordion>
     </DetailsContainer>
