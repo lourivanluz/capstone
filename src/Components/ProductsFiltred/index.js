@@ -10,16 +10,15 @@ export const ProductFiltred = () => {
 
   useEffect(() => {
     filterPerCategory(category);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category]);
 
   return (
     <Container>
       <h1>{category}</h1>
       <ContainerUl>
-        {filteredProducts.map((item, index) => (
-          <li key={index}>
-            <CardProduct product={item} />
-          </li>
+        {filteredProducts.map((item) => (
+          <CardProduct key={item.id} product={item} />
         ))}
       </ContainerUl>
     </Container>

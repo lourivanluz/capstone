@@ -1,5 +1,4 @@
 import { useCart } from "../../Providers/Cart";
-import { AiOutlineCloseCircle } from "react-icons/ai";
 import { CardCartContainer } from "./style";
 
 export const CardCart = ({ item }) => {
@@ -10,7 +9,7 @@ export const CardCart = ({ item }) => {
   return (
     <CardCartContainer>
       <div className="imgProduct">
-        <img src={item.img} alt={"product image"} />
+        <img src={item.img} alt={item.title} />
       </div>
       <div className="info">
         <h1>

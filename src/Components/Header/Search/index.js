@@ -11,6 +11,7 @@ export const Search = ({ setShowSearch }) => {
 
   useEffect(() => {
     filterPerInput(userInput);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userInput]);
 
   return (
@@ -31,7 +32,11 @@ export const Search = ({ setShowSearch }) => {
 
       <ul>
         {filteredInputProducts.map((product) => (
-          <CardSearch product={product} setShowSearch={setShowSearch} />
+          <CardSearch
+            key={product.id}
+            product={product}
+            setShowSearch={setShowSearch}
+          />
         ))}
       </ul>
     </SearchContainer>

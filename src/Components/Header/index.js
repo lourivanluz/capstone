@@ -39,7 +39,7 @@ export const Header = () => {
     <HeaderContainer>
       <div className="header">
         <div className="logo" onClick={() => history.push("/")}>
-          <img src={Logo} />
+          <img src={Logo} alt="logo" />
         </div>
         <div className="filters">
           <span

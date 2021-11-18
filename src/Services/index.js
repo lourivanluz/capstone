@@ -17,29 +17,11 @@ const getHeaders = () => {
   return headers;
 };
 
-const genericPost = (url, data) => {
-  const headers = getHeaders();
-
-  return api
-    .post(url, data, headers)
-    .then((response) => response)
-    .catch((error) => error.response);
-};
-
 const genericGet = (url) => {
   const headers = getHeaders();
 
   return api
     .get(url, headers)
-    .then((response) => response)
-    .catch((error) => error.response);
-};
-
-const genericPatch = (url, data) => {
-  const headers = getHeaders();
-
-  return api
-    .patch(url, data, headers)
     .then((response) => response)
     .catch((error) => error.response);
 };
