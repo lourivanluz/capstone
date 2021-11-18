@@ -44,77 +44,95 @@ const SignUpForm = () => {
         <h1>Criar Conta</h1>
 
         <TextField
-          label={errors.name ? errors.name.message : "Nome"}
+          placeholder="Nome"
           fullWidth
           variant="standard"
           {...register("name")}
+          error={!!errors.name}
+          helperText={errors.name?.message}
         />
 
         <TextField
-          label={errors.email ? errors.email.message : "E-mail"}
+          placeholder="E-mail"
           fullWidth
           variant="standard"
           {...register("email")}
+          error={!!errors.email}
+          helperText={errors.email?.message}
         />
 
         <TextField
-          label={errors.phone ? errors.phone.message : "Telefone"}
+          placeholder="Telefone"
           fullWidth
           variant="standard"
           {...register("phone")}
+          error={!!errors.phone}
+          helperText={errors.phone?.message}
         />
 
         <TextField
-          label={errors.password ? errors.password.message : "Senha"}
+          placeholder="Senha"
           fullWidth
           variant="standard"
           type="password"
           {...register("password")}
+          error={!!errors.password}
+          helperText={errors.password?.message}
         />
 
         <TextField
-          label={
-            errors.passconf ? errors.passconf.message : "Confirmação de senha"
-          }
+          placeholder="Confirmação de senha"
           fullWidth
           variant="standard"
           type="password"
           {...register("passconf")}
+          error={!!errors.passconf}
+          helperText={errors.passconf?.message}
         />
 
         <TextField
-          label={errors.cep ? errors.cep.message : "CEP"}
+          placeholder="CEP"
           fullWidth
           variant="standard"
           {...register("cep")}
+          error={!!errors.cep}
+          helperText={errors.cep?.message}
         />
 
         <TextField
-          label={errors.address ? errors.address.message : "Endereço"}
+          placeholder="Endereço"
           fullWidth
           variant="standard"
           {...register("address")}
+          error={!!errors.address}
+          helperText={errors.address?.message}
         />
 
         <TextField
-          label={errors.area ? errors.area.message : "Bairro"}
+          placeholder="Bairro"
           fullWidth
           variant="standard"
           {...register("area")}
+          error={!!errors.area}
+          helperText={errors.area?.message}
         />
 
         <TextField
-          label={errors.number ? errors.number.message : "Número"}
+          placeholder="Número"
           fullWidth
           variant="standard"
           {...register("number")}
+          error={!!errors.number}
+          helperText={errors.number?.message}
         />
 
         <TextField
-          label={errors.complement ? errors.complement.message : "Complemento"}
+          placeholder="Complemento"
           fullWidth
           variant="standard"
           {...register("complement")}
+          error={!!errors.complement}
+          helperText={errors.complement?.message}
         />
 
         <FlexButton type="submit">Tudo Pronto</FlexButton>

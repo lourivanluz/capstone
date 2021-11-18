@@ -33,61 +33,75 @@ const EditForm = () => {
         <h1>Editar Conta</h1>
 
         <TextField
-          label={errors.name ? errors.name.message : user.name}
+          placeholder={user.name}
           fullWidth
           variant="standard"
           {...register("name")}
+          error={!!errors.name}
+          helperText={errors.name?.message}
         />
 
         <TextField
-          label={errors.email ? errors.email.message : user.email}
+          placeholder={user.email}
           fullWidth
           variant="standard"
           {...register("email")}
+          error={!!errors.email}
+          helperText={errors.email?.message}
         />
 
         <TextField
-          label={errors.phone ? errors.phone.message : user.phone}
+          placeholder={user.phone}
           fullWidth
           variant="standard"
           {...register("phone")}
+          error={!!errors.phone}
+          helperText={errors.phone?.message}
         />
 
         <TextField
-          label={errors.cep ? errors.cep.message : user.cep}
+          placeholder={user.cep}
           fullWidth
           variant="standard"
           {...register("cep")}
+          error={!!errors.cep}
+          helperText={errors.cep?.message}
         />
 
         <TextField
-          label={errors.address ? errors.address.message : user.address}
+          placeholder={user.address}
           fullWidth
           variant="standard"
           {...register("address")}
+          error={!!errors.address}
+          helperText={errors.address?.message}
         />
 
         <TextField
-          label={errors.area ? errors.area.message : user.area}
+          placeholder={user.area}
           fullWidth
           variant="standard"
           {...register("area")}
+          error={!!errors.area}
+          helperText={errors.area?.message}
         />
 
         <TextField
-          label={errors.number ? errors.number.message : user.number}
+          placeholder={user.number}
           fullWidth
           variant="standard"
           {...register("number")}
+          error={!!errors.number}
+          helperText={errors.number?.message}
         />
 
         <TextField
-          label={
-            errors.complement ? errors.complement.message : user.complement
-          }
+          placeholder={user.complement}
           fullWidth
           variant="standard"
           {...register("complement")}
+          error={!!errors.complement}
+          helperText={errors.complement?.message}
         />
 
         <FlexButton type="submit">Tudo Pronto</FlexButton>

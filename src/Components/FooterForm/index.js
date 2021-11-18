@@ -6,6 +6,8 @@ import { TextField } from "@mui/material";
 import { FormBackground, FormContent } from "./style";
 import FlexButton from "../FlexButton";
 
+import { toast } from "react-toastify";
+
 const FooterForm = () => {
   const schema = yup.object().shape({
     name: yup.string().required("Nome obrigatório *"),
@@ -23,7 +25,11 @@ const FooterForm = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   return (
-    <FormBackground onSubmit={handleSubmit(() => console.log("Enviado"))}>
+    <FormBackground
+      onSubmit={handleSubmit(() =>
+        toast.success("Agradecemos seu feedback", { position: "top-center" })
+      )}
+    >
       <FormContent>
         <h2>Fale Com a Gente</h2>
         <div className="flex">
@@ -31,6 +37,7 @@ const FooterForm = () => {
             <TextField
               label={errors.name ? errors.name.message : "Nome"}
               {...register("name")}
+              error={!!errors.name}
               variant="filled"
               fullWidth
             />
@@ -39,6 +46,7 @@ const FooterForm = () => {
             <TextField
               label={errors.email ? errors.email.message : "E-mail"}
               {...register("email")}
+              error={!!errors.email}
               variant="filled"
               fullWidth
             />
@@ -49,6 +57,7 @@ const FooterForm = () => {
             errors.feedback ? errors.feedback.message : "Deixe sua mensagem"
           }
           {...register("feedback")}
+          error={!!errors.feedback}
           variant="filled"
           fullWidth
           multiline
