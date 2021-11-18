@@ -48,7 +48,9 @@ export const Header = () => {
           >
             Nossas Boxs
           </span>
-          <button>Compre uma box</button>
+          <button onClick={() => history.push("/register")}>
+            Compre uma box
+          </button>
         </div>
         <div className="menuContainer">
           <AiOutlineMenu />
