@@ -8,10 +8,4 @@ export const ImgStyled = styled.img`
   min-height: 100px;
   margin: 15px auto;
   border-radius: 5px;
-  /*   background-image: url(${imgMobile});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 1024px; */
-
-  src: url(imgDesk);
 `;
