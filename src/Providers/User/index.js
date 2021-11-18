@@ -8,8 +8,8 @@ export const useUser = () => useContext(UserContext);
 
 export const UserProvider = ({ children }) => {
   const [data, setData] = useState(() => {
-    const accessToken = localStorage.getItem("@BHealthy: accessToken");
-    const user = localStorage.getItem("@BHealthy: user");
+    const accessToken = localStorage.getItem("@Inham: accessToken");
+    const user = localStorage.getItem("@Inham: user");
 
     if (accessToken && user) {
       return { accessToken, user: JSON.parse(user) };
@@ -20,8 +20,8 @@ export const UserProvider = ({ children }) => {
 
   const logout = () => {
     setData({});
-    localStorage.removeItem("@BHealthy: accessToken");
-    localStorage.removeItem("@BHealthy: user");
+    localStorage.removeItem("@Inham: accessToken");
+    localStorage.removeItem("@Inham: user");
   };
 
   const loginAccount = (userInput) => {
@@ -35,8 +35,8 @@ export const UserProvider = ({ children }) => {
       .then((response) => {
         const { accessToken, user } = response.data;
 
-        localStorage.setItem("@BHealthy: accessToken", accessToken);
-        localStorage.setItem("@BHealthy: user", JSON.stringify(user));
+        localStorage.setItem("@Inham: accessToken", accessToken);
+        localStorage.setItem("@Inham: user", JSON.stringify(user));
 
         setData({ accessToken, user });
       })
@@ -82,7 +82,8 @@ export const UserProvider = ({ children }) => {
         headers: { Authorization: `Bearer ${data.accessToken}` },
       })
       .then((response) => {
-        setData({ accessToken: data.accessToken, response });
+        localStorage.setItem("@Inham: user", JSON.stringify(response.data));
+        setData({ accessToken: data.accessToken, user: response.data });
       })
       .catch((_) => console.log("Desculpe, algo deu errado"));
   };
@@ -95,7 +96,8 @@ export const UserProvider = ({ children }) => {
         headers: { Authorization: `Bearer ${data.accessToken}` },
       })
       .then((response) => {
-        setData({ accessToken: data.accessToken, response });
+        localStorage.setItem("@Inham: user", JSON.stringify(response.data));
+        setData({ accessToken: data.accessToken, user: response.data });
       })
       .catch((_) => console.log("Desculpe, algo deu errado"));
   };

@@ -1,3 +1,5 @@
+import BoxDetails from "../../Components/BoxDetails";
+
 export const BoxDeteil = () => {
-  return <div>BoxDeteil</div>;
+  return <BoxDetails />;
 };

@@ -1,8 +1,13 @@
+import { Banner } from "../../Components/Banner";
+import CarouselBoxes from "../../Components/CarouselBoxes";
 import CarouselProducts from "../../Components/CarouselProducts";
+import { PageBase } from "../../Components/PageBase";
+import { useBox } from "../../Providers/Box";
 import { useProducts } from "../../Providers/Products";
 
 export const Home = () => {
   const { products } = useProducts();
+  const { boxList } = useBox();
   const meatList = products.filter(
     (item) => item.category === "carnes vermelhas"
   );
@@ -18,35 +23,32 @@ export const Home = () => {
   );
 
   return (
-    <div>
-      <div style={{ backgroundColor: "red" }}>
-        <h1>Carnes:</h1>
+    <PageBase>
+      <Banner />
+      <div>
         <CarouselProducts products={meatList} />
       </div>
-      <div style={{ backgroundColor: "red" }}>
-        <h1>Frangos:</h1>
+      <div>
+        <CarouselBoxes products={boxList} />
+      </div>
+      <div>
         <CarouselProducts products={chickenList} />
       </div>
-      <div style={{ backgroundColor: "red" }}>
-        <h1>Vegetarianos:</h1>
+      <div>
         <CarouselProducts products={vegList} />
       </div>
-      <div style={{ backgroundColor: "red" }}>
-        <h1>Peixes e frutos do mar:</h1>
+      <div>
         <CarouselProducts products={fishList} />
       </div>
-      <div style={{ backgroundColor: "red" }}>
-        <h1>Snacks:</h1>
+      <div>
         <CarouselProducts products={snacksList} />
       </div>
-      <div style={{ backgroundColor: "red" }}>
-        <h1>Pães:</h1>
+      <div>
         <CarouselProducts products={breadsList} />
       </div>
-      <div style={{ backgroundColor: "red" }}>
-        <h1>Sopas e cremes:</h1>
+      <div>
         <CarouselProducts products={soupsList} />
       </div>
-    </div>
+    </PageBase>
   );
 };

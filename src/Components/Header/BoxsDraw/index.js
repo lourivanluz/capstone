@@ -4,9 +4,6 @@ import { BoxDrawStyle } from "./style";
 
 export const BoxsDraw = ({ setDropDrawBox }) => {
   const { boxList } = useBox();
-
-  console.log(boxList);
-
   return (
     <BoxDrawStyle onMouseEnter={() => setDropDrawBox(true)}>
       <ul onMouseLeave={() => setDropDrawBox(false)}>

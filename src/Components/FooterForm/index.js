@@ -3,6 +3,8 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { TextField } from "@mui/material";
+import { FormBackground, FormContent } from "./style";
+import FlexButton from "../FlexButton";
 
 const FooterForm = () => {
   const schema = yup.object().shape({
@@ -21,38 +23,42 @@ const FooterForm = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   return (
-    <form
-      onSubmit={handleSubmit(() => console.log("Enviado"))}
-      style={{ display: "flex", flexDirection: "column", width: "420px" }}
-    >
-      <div style={{ display: "flex" }}>
+    <FormBackground onSubmit={handleSubmit(() => console.log("Enviado"))}>
+      <FormContent>
+        <h2>Fale Com a Gente</h2>
+        <div className="flex">
+          <div className="flex-left">
+            <TextField
+              label={errors.name ? errors.name.message : "Nome"}
+              {...register("name")}
+              variant="filled"
+              fullWidth
+            />
+          </div>
+          <div className="flex-right">
+            <TextField
+              label={errors.email ? errors.email.message : "E-mail"}
+              {...register("email")}
+              variant="filled"
+              fullWidth
+            />
+          </div>
+        </div>
         <TextField
-          label={errors.name ? errors.name.message : "Nome"}
-          {...register("name")}
-          variant="outlined"
-          color="success"
-          size="small"
+          label={
+            errors.feedback ? errors.feedback.message : "Deixe sua mensagem"
+          }
+          {...register("feedback")}
+          variant="filled"
+          fullWidth
+          multiline
+          rows={4}
         />
-        <TextField
-          label={errors.email ? errors.email.message : "E-mail"}
-          {...register("email")}
-          variant="outlined"
-          color="success"
-          size="small"
-        />
-      </div>
-      <TextField
-        style={{ margin: "8px 0" }}
-        label={errors.feedback ? errors.feedback.message : "Deixe sua mensagem"}
-        {...register("feedback")}
-        variant="outlined"
-        color="success"
-        size="small"
-        multiline
-        rows={4}
-      />
-      <button type="submit">Enviar</button>
-    </form>
+        <FlexButton font="18px" type="submit">
+          Enviar
+        </FlexButton>
+      </FormContent>
+    </FormBackground>
   );
 };
 

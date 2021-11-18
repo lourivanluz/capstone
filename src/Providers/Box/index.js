@@ -4,7 +4,7 @@ import api from "../../Services/";
 export const BoxContext = createContext({});
 
 export const BoxProvider = ({ children }) => {
-  const [boxList, setBoxList] = useState();
+  const [boxList, setBoxList] = useState([]);
 
   useEffect(() => {
     api

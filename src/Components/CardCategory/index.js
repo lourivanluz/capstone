@@ -1,4 +1,5 @@
 import { useHistory } from "react-router";
+import FlexButton from "../FlexButton";
 import { CardCategoryContainer, CardCategoryContent } from "./style";
 
 const CardCategory = ({ product, imageBackground }) => {
@@ -7,11 +8,12 @@ const CardCategory = ({ product, imageBackground }) => {
     <CardCategoryContainer imageBackground={imageBackground}>
       <CardCategoryContent>
         <h1> {product.category} </h1>
-        <button
+        <FlexButton
+          width="80%"
           onClick={() => history.push(`/products/filter/${product.category}`)}
         >
           Ver mais
-        </button>
+        </FlexButton>
       </CardCategoryContent>
     </CardCategoryContainer>
   );

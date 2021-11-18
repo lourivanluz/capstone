@@ -24,31 +24,20 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
+	box-sizing: border-box;
 }
 body {
-	line-height: 1;
     font-family: var(--font-primary);
     
 }
 ol, ul {
 	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
 }
 
 button{
@@ -58,10 +47,17 @@ img{
     max-width: 100%;
     display: block;
 }
+a{
+	text-decoration: none;
+}
 
 :root{
 
 --font-primary:'Inter', sans-serif;
+--fontColor-primary:rgb(128, 128, 128);
+--color-primary:rgb(250, 2, 60);
+--color-secondary:#42a5f5;
+--color-focus:#019C98;
 
 }
 `;

@@ -3,6 +3,9 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { useUser } from "../../Providers/User";
+import { FormWrapper } from "../SignUpForm/style";
+import { TextField } from "@mui/material";
+import FlexButton from "../FlexButton";
 
 const EditForm = () => {
   const schema = yup.object().shape({
@@ -22,37 +25,73 @@ const EditForm = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
 
-  const { editAccount } = useUser();
+  const { user, editAccount } = useUser();
 
   return (
-    <form
-      onSubmit={handleSubmit(editAccount)}
-      style={{ display: "flex", flexDirection: "column", width: "300px" }}
-    >
-      {!!errors.name && <span>{errors.name.message}</span>}
-      <input placeholder="Nome" {...register("name")} />
+    <form onSubmit={handleSubmit(editAccount)}>
+      <FormWrapper>
+        <h1>Editar Conta</h1>
 
-      {!!errors.email && <span>{errors.email.message}</span>}
-      <input placeholder="E-mail" {...register("email")} />
+        <TextField
+          label={errors.name ? errors.name.message : user.name}
+          fullWidth
+          variant="standard"
+          {...register("name")}
+        />
 
-      {!!errors.phone && <span>{errors.phone.message}</span>}
-      <input placeholder="Telefone" {...register("phone")} />
+        <TextField
+          label={errors.email ? errors.email.message : user.email}
+          fullWidth
+          variant="standard"
+          {...register("email")}
+        />
 
-      {!!errors.cep && <span>{errors.cep.message}</span>}
-      <input placeholder="CEP" {...register("cep")} />
+        <TextField
+          label={errors.phone ? errors.phone.message : user.phone}
+          fullWidth
+          variant="standard"
+          {...register("phone")}
+        />
 
-      {!!errors.address && <span>{errors.address.message}</span>}
-      <input placeholder="Endereço" {...register("address")} />
+        <TextField
+          label={errors.cep ? errors.cep.message : user.cep}
+          fullWidth
+          variant="standard"
+          {...register("cep")}
+        />
 
-      {!!errors.area && <span>{errors.area.message}</span>}
-      <input placeholder="Bairro" {...register("area")} />
+        <TextField
+          label={errors.address ? errors.address.message : user.address}
+          fullWidth
+          variant="standard"
+          {...register("address")}
+        />
 
-      {!!errors.number && <span>{errors.number.message}</span>}
-      <input placeholder="Número" {...register("number")} />
+        <TextField
+          label={errors.area ? errors.area.message : user.area}
+          fullWidth
+          variant="standard"
+          {...register("area")}
+        />
 
-      <input placeholder="Complemento" {...register("complement")} />
+        <TextField
+          label={errors.number ? errors.number.message : user.number}
+          fullWidth
+          variant="standard"
+          {...register("number")}
+        />
 
-      <button type="submit">Salvar alterações</button>
+        <TextField
+          label={
+            errors.complement ? errors.complement.message : user.complement
+          }
+          fullWidth
+          variant="standard"
+          {...register("complement")}
+        />
+
+        <FlexButton type="submit">Tudo Pronto</FlexButton>
+      </FormWrapper>
     </form>
   );
 };

@@ -5,6 +5,7 @@ import { Container, ContainerUl } from "./style";
 const CarouselProducts = ({ products }) => {
   return (
     <Container>
+      <h2>{!products[0] ? null : products[0].category}</h2>
       <ContainerUl>
         {!products[0] ? null : (
           <CardCategory
@@ -12,9 +13,9 @@ const CarouselProducts = ({ products }) => {
             imageBackground={products[0].img}
           />
         )}
-        {products.map((product) => (
-          <CardProduct key={product.id} product={product} />
-        ))}
+        {products.map((product, index) =>
+          index < 5 ? <CardProduct key={product.id} product={product} /> : null
+        )}
       </ContainerUl>
     </Container>
   );
