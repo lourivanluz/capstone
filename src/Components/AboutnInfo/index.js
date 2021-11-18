@@ -7,7 +7,7 @@ const AboutInfo = () => {
       <div>
         <h3>Você escolhe</h3>
         <p>
-          São 5 opções diferentes para atender seus gostos e necessidades, com 2
+          São 6 opções diferentes para atender seus gostos e necessidades, com 2
           receitas diferentes todo mês
         </p>
       </div>

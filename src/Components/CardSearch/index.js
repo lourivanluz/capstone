@@ -1,5 +1,6 @@
 import { useHistory } from "react-router";
 import { useCart } from "../../Providers/Cart";
+import FlexButton from "../FlexButton";
 import { CardSearchContainer } from "./style";
 
 const CardSearch = ({ product, setShowSearch }) => {
@@ -17,7 +18,9 @@ const CardSearch = ({ product, setShowSearch }) => {
         <h3 onClick={handleClick}>{product.title}</h3>
         <span>{product.price}</span>
       </div>
-      <button onClick={() => addToCart(product)}>Adicionar</button>
+      <FlexButton width="30%" onClick={() => addToCart(product)}>
+        Adicionar
+      </FlexButton>
     </CardSearchContainer>
   );
 };
