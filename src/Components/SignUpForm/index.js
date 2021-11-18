@@ -44,7 +44,7 @@ const SignUpForm = () => {
         <h1>Criar Conta</h1>
 
         <TextField
-          placeholder="Nome"
+          label="Nome"
           fullWidth
           variant="standard"
           {...register("name")}
@@ -53,7 +53,7 @@ const SignUpForm = () => {
         />
 
         <TextField
-          placeholder="E-mail"
+          label="E-mail"
           fullWidth
           variant="standard"
           {...register("email")}
@@ -62,7 +62,7 @@ const SignUpForm = () => {
         />
 
         <TextField
-          placeholder="Telefone"
+          label="Telefone"
           fullWidth
           variant="standard"
           {...register("phone")}
@@ -71,7 +71,7 @@ const SignUpForm = () => {
         />
 
         <TextField
-          placeholder="Senha"
+          label="Senha"
           fullWidth
           variant="standard"
           type="password"
@@ -81,7 +81,7 @@ const SignUpForm = () => {
         />
 
         <TextField
-          placeholder="Confirmação de senha"
+          label="Confirmação de senha"
           fullWidth
           variant="standard"
           type="password"
@@ -91,7 +91,7 @@ const SignUpForm = () => {
         />
 
         <TextField
-          placeholder="CEP"
+          label="CEP"
           fullWidth
           variant="standard"
           {...register("cep")}
@@ -100,7 +100,7 @@ const SignUpForm = () => {
         />
 
         <TextField
-          placeholder="Endereço"
+          label="Endereço"
           fullWidth
           variant="standard"
           {...register("address")}
@@ -109,7 +109,7 @@ const SignUpForm = () => {
         />
 
         <TextField
-          placeholder="Bairro"
+          label="Bairro"
           fullWidth
           variant="standard"
           {...register("area")}
@@ -118,7 +118,7 @@ const SignUpForm = () => {
         />
 
         <TextField
-          placeholder="Número"
+          label="Número"
           fullWidth
           variant="standard"
           {...register("number")}
@@ -127,7 +127,7 @@ const SignUpForm = () => {
         />
 
         <TextField
-          placeholder="Complemento"
+          label="Complemento"
           fullWidth
           variant="standard"
           {...register("complement")}

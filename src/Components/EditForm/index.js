@@ -33,7 +33,7 @@ const EditForm = () => {
         <h1>Editar Conta</h1>
 
         <TextField
-          placeholder={user.name}
+          label={user.name}
           fullWidth
           variant="standard"
           {...register("name")}
@@ -42,7 +42,7 @@ const EditForm = () => {
         />
 
         <TextField
-          placeholder={user.email}
+          label={user.email}
           fullWidth
           variant="standard"
           {...register("email")}
@@ -51,7 +51,7 @@ const EditForm = () => {
         />
 
         <TextField
-          placeholder={user.phone}
+          label={user.phone}
           fullWidth
           variant="standard"
           {...register("phone")}
@@ -60,7 +60,7 @@ const EditForm = () => {
         />
 
         <TextField
-          placeholder={user.cep}
+          label={user.cep}
           fullWidth
           variant="standard"
           {...register("cep")}
@@ -69,7 +69,7 @@ const EditForm = () => {
         />
 
         <TextField
-          placeholder={user.address}
+          label={user.address}
           fullWidth
           variant="standard"
           {...register("address")}
@@ -78,7 +78,7 @@ const EditForm = () => {
         />
 
         <TextField
-          placeholder={user.area}
+          label={user.area}
           fullWidth
           variant="standard"
           {...register("area")}
@@ -87,7 +87,7 @@ const EditForm = () => {
         />
 
         <TextField
-          placeholder={user.number}
+          label={user.number}
           fullWidth
           variant="standard"
           {...register("number")}
@@ -96,7 +96,7 @@ const EditForm = () => {
         />
 
         <TextField
-          placeholder={user.complement}
+          label={user.complement}
           fullWidth
           variant="standard"
           {...register("complement")}
