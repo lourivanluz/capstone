@@ -74,9 +74,8 @@ const DetailsAccordion = () => {
           E se eu não gostar do que recebi?
         </AccordionSummary>
         <AccordionDetails>
-          AZAR texto texto texto texto texto texto texto texto texto texto texto
-          texto texto texto texto texto texto texto texto texto texto texto
-          texto texto texto texto texto texto texto texto texto texto texto
+          Nossa equipe esta pronta para receber seu feedback, nos avalie e
+          faremos o nosso melhor!
         </AccordionDetails>
       </Accordion>
     </DetailsContainer>
