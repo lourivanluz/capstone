@@ -54,7 +54,7 @@ export const Header = () => {
           >
             Nossas Boxs
           </span>
-          <button className="buyAbox" onClick={() => history.push("/register")}>
+          <button className="buyAbox" onClick={() => history.push("/about")}>
             Compre uma box
           </button>
         </div>
