@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import api from "../../Services/";
+import { toast } from "react-toastify";
 
 export const BoxContext = createContext({});
 
@@ -10,7 +11,9 @@ export const BoxProvider = ({ children }) => {
     api
       .get("/boxes")
       .then((response) => setBoxList(response.data))
-      .catch((err) => console.log("deu errado"));
+      .catch((_) =>
+        toast.error("Desculpe, algo deu errado", { position: "top-center" })
+      );
   }, []);
 
   return (

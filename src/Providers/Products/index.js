@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import { getProducts, getProductsPerCategory } from "../../Services";
 
 const ProductsContext = createContext();
@@ -13,13 +14,17 @@ export const ProductsProvider = ({ children }) => {
       .then((response) => {
         setProducts(response.data);
       })
-      .catch((err) => console.log(err));
+      .catch((_) =>
+        toast.error("Desculpe, algo deu errado", { position: "top-center" })
+      );
   }, []);
 
   const filterPerCategory = (category) => {
     getProductsPerCategory(category)
       .then((response) => setFilteredProducts(response.data))
-      .catch((err) => console.log(err));
+      .catch((_) =>
+        toast.error("Desculpe, algo deu errado", { position: "top-center" })
+      );
   };
 
   const filterPerInput = (value) => {

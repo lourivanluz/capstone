@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { useHistory } from "react-router";
+import { toast } from "react-toastify";
 import api from "../../Services/";
 
 const UserContext = createContext();
@@ -22,6 +23,8 @@ export const UserProvider = ({ children }) => {
     setData({});
     localStorage.removeItem("@Inham: accessToken");
     localStorage.removeItem("@Inham: user");
+
+    toast.success("Volte sempre!", { position: "top-center" });
   };
 
   const loginAccount = (userInput) => {
@@ -39,8 +42,14 @@ export const UserProvider = ({ children }) => {
         localStorage.setItem("@Inham: user", JSON.stringify(user));
 
         setData({ accessToken, user });
+
+        toast.success(`Bem vindo, ${user.name}!`, {
+          position: "top-center",
+        });
       })
-      .catch((_) => console.log("Email ou senha incorretos"));
+      .catch((_) => {
+        toast.error("E-mail ou senha incorretos", { position: "top-center" });
+      });
   };
 
   const createAccount = (userInput) => {
@@ -62,7 +71,9 @@ export const UserProvider = ({ children }) => {
       .then((_) => {
         loginAccount(payload);
       })
-      .catch((_) => console.log("Email já cadastrado"));
+      .catch((_) =>
+        toast.info("E-mail já cadastrado", { position: "top-center" })
+      );
   };
 
   const editAccount = (userInput) => {
@@ -84,8 +95,11 @@ export const UserProvider = ({ children }) => {
       .then((response) => {
         localStorage.setItem("@Inham: user", JSON.stringify(response.data));
         setData({ accessToken: data.accessToken, user: response.data });
+        toast.success("Alterações salvas", { position: "top-center" });
       })
-      .catch((_) => console.log("Desculpe, algo deu errado"));
+      .catch((_) =>
+        toast.error("Desculpe, algo deu errado", { position: "top-center" })
+      );
   };
 
   const subscribeAccount = () => {
@@ -98,8 +112,13 @@ export const UserProvider = ({ children }) => {
       .then((response) => {
         localStorage.setItem("@Inham: user", JSON.stringify(response.data));
         setData({ accessToken: data.accessToken, user: response.data });
+        toast.success("Aproveite os descontos!", {
+          position: "top-center",
+        });
       })
-      .catch((_) => console.log("Desculpe, algo deu errado"));
+      .catch((_) =>
+        toast.error("Desculpe, algo deu errado", { position: "top-center" })
+      );
   };
 
   return (

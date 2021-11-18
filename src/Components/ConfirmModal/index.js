@@ -3,6 +3,8 @@ import { useUser } from "../../Providers/User";
 import { useCart } from "../../Providers/Cart";
 import FlexButton from "../FlexButton";
 
+import { toast } from "react-toastify";
+
 const ConfirmModal = ({ haveBox, setShowModal }) => {
   const { user, subscribeAccount } = useUser();
   const { clearCart } = useCart();
@@ -14,14 +16,10 @@ const ConfirmModal = ({ haveBox, setShowModal }) => {
   const handlePurchase = () => {
     if (haveBox) {
       subscribeAccount();
-      clearCart();
-
-      console.log("Compra finalizada");
     } else {
-      clearCart();
-
-      console.log("Compra finalizada");
+      toast.success("Compra finalizada");
     }
+    clearCart();
     setShowModal(false);
   };
 
