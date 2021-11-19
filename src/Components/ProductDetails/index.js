@@ -1,6 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { useState } from "react/cjs/react.development";
 import { useCart } from "../../Providers/Cart";
 import { getProductDetails } from "../../Services";
 import { ProductWrapper } from "../BoxDetails/style";
