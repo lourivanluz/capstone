@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://behelty-api.herokuapp.com/",
+  baseURL: "https://inhamapi.herokuapp.com/",
 });
 
 const getHeaders = () => {
